@@ -18,6 +18,15 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://jlmz2010.github.io/flipperbet/">
 <meta property="og:locale" content="es_MX">
+<link rel="icon" type="image/svg+xml" href="img/icono.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icono-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/icono-180.png">
+<meta property="og:image" content="https://jlmz2010.github.io/flipperbet/img/compartir.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="FlipperBet">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#073a54">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
@@ -50,7 +59,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 
 /* Barra */
 .top{display:flex;justify-content:space-between;align-items:center;padding-block:18px;border-bottom:1px solid var(--line);max-width:720px;margin-inline:auto;gap:12px;flex-wrap:wrap}
-.brand{font-family:var(--f-display);font-weight:800;font-size:26px;letter-spacing:.02em}
+.brand{font-family:var(--f-display);font-weight:800;font-size:28px;letter-spacing:.02em;display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:10px;flex:none}
 .brand b{color:var(--gold)}
 .brand span{color:var(--ocean)}
 
@@ -113,7 +123,7 @@ footer strong{color:var(--warn)}
 </head>
 <body>
 <header class="top">
-  <div class="brand"><b>Flipper</b><span>Bet</span></div>
+  <a class="brand" href="./" aria-label="FlipperBet inicio"><img src="img/icono.svg" alt="" width="40" height="40"><span><b>Flipper</b><span>Bet</span></span></a>
   <div class="eyebrow">Blog NFL · Temporada 2026</div>
 </header>
 
