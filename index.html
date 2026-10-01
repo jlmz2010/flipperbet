@@ -11,20 +11,20 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>FlipperBet NFL Semana 4</title>
-<meta name="description" content="Blog semanal de NFL en español: underdog de la semana, claves de cada partido y líneas explicadas en corto.">
-<meta property="og:title" content="FlipperBet NFL · Semana 4">
-<meta property="og:description" content="Underdog del jueves y claves de los 16 partidos de la Semana 4.">
+<title>Apuestas NFL · FlippBetBlog</title>
+<meta name="description" content="Las jugadas NFL de la semana: 2 apuestas, 1 parlay, nuestros underdogs y el pick de cada partido con su momio.">
+<meta property="og:title" content="Apuestas NFL · FlippBetBlog">
+<meta property="og:description" content="2 apuestas, 1 parlay y nuestros underdogs de la semana NFL.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://jlmz2010.github.io/flipperbet/">
+<meta property="og:url" content="https://jlmz2010.github.io/flipperbet/apuestas/">
 <meta property="og:locale" content="es_MX">
-<link rel="icon" type="image/svg+xml" href="img/icono.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="img/icono-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/icono-180.png">
+<link rel="icon" type="image/svg+xml" href="../img/icono.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/icono-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/icono-180.png">
 <meta property="og:image" content="https://jlmz2010.github.io/flipperbet/img/compartir.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:site_name" content="FlipperBet">
+<meta property="og:site_name" content="FlippBetBlog">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#073a54">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,145 +119,170 @@ tr.hl td{background:var(--gold-soft)}
 footer{font-size:13.5px;color:var(--muted);display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:18px}
 footer strong{color:var(--warn)}
 @media (prefers-reduced-motion:no-preference){.hero h1 em{display:inline-block;animation:pop .6s ease-out .15s both}@keyframes pop{from{transform:translateY(6px);opacity:.3}to{transform:none;opacity:1}}}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{font-family:var(--f-mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:7px 11px;border:1px solid var(--line);border-radius:4px;background:var(--paper)}
+.nav a[aria-current="page"]{background:var(--ocean);border-color:var(--ocean);color:var(--on-ocean)}
+.nav a.admin{color:var(--muted)}
+.dogs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.dogcard{border:1px solid var(--line);border-radius:6px;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.dogcard h3{font-size:26px;font-weight:800;text-transform:uppercase}
+.dogcard .eyebrow{font-size:11px}
+
+.wrap{max-width:960px}
+.top{max-width:960px}
+.tickets{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.ticket{background:var(--paper);border:1px solid var(--line);border-radius:6px;display:grid;grid-template-rows:auto 1fr auto}
+.ticket .tt{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 16px;border-bottom:2px dashed var(--line)}
+.kind{font-family:var(--f-mono);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:3px;background:var(--ocean-deep);color:var(--on-ocean)}
+.ticket.parlay .kind{background:var(--gold);color:#1c1405}
+.ticket .tb{padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.ticket h3{font-size:26px;font-weight:800;text-transform:uppercase}
+.legs{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px;font-size:15.5px}
+.legs li::before{content:"+ ";font-family:var(--f-mono);font-weight:700;color:var(--gold)}
+.why{color:var(--muted);font-size:15px}
+.tf{display:flex;justify-content:space-between;align-items:end;gap:12px;padding:12px 16px;border-top:1px solid var(--line)}
+.odds{font-family:var(--f-mono);font-weight:700;font-size:30px;font-variant-numeric:tabular-nums}
+.odds small{display:block;font-size:10.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.when{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);text-align:right}
+.meter{display:flex;flex-direction:column;gap:5px}
+.bar{height:12px;border-radius:2px;background:var(--line);display:flex;overflow:hidden}
+.bar i{display:block;height:100%}
+.mrow{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:12.5px}
+.weeks{display:flex;gap:6px;flex-wrap:wrap}
+.weeks button{font-family:var(--f-mono);font-weight:700;font-size:13px;padding:7px 11px;border-radius:3px;border:1px solid rgba(255,255,255,.35);background:transparent;color:var(--on-ocean);cursor:pointer}
+.weeks button[aria-current="true"]{background:var(--gold);border-color:var(--gold);color:#1c1405}
+.pk{font-family:var(--f-mono);font-weight:700}
+.vs{display:inline-block;font-family:var(--f-mono);font-size:10.5px;font-weight:700;padding:2px 6px;border-radius:3px;background:var(--gold);color:#1c1405}
+.wv{display:inline-block;font-family:var(--f-mono);font-size:10.5px;padding:2px 6px;border-radius:3px;border:1px solid var(--line);color:var(--muted)}
+tr.against td{background:var(--gold-soft)}
+.empty{background:var(--paper);border:1px dashed var(--line);border-radius:6px;padding:16px;color:var(--muted)}
 </style>
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="./" aria-label="FlipperBet inicio"><img src="img/icono.svg" alt="" width="40" height="40"><span><b>Flipper</b><span>Bet</span></span></a>
-  <div class="eyebrow">Blog NFL · Temporada 2026</div>
+  <a class="brand" href=".././" aria-label="FlippBetBlog inicio"><img src="../img/icono.svg" alt="" width="40" height="40"><span><b>Flipp</b><span>BetBlog</span></span></a>
+  <nav class="nav" aria-label="Secciones"><a href=".././">Blog</a><a href="../apuestas/" aria-current="page">Apuestas NFL</a><a href="https://claude.ai/artifact/K9kYEZdrSgLZnAtLsKs64c" class="admin" target="_blank" rel="noopener">Admin</a></nav>
 </header>
 
 <main class="wrap" style="margin-top:24px">
-
   <div class="hero">
-    <div class="eyebrow">NFL 2026 · Publicado 30 sep</div>
-    <h1>Semana <em>4</em></h1>
-    <p class="dek">Lo que puede decidir cada partido, explicado con números y en corto. Más un underdog para el jueves.</p>
-    <div class="byline"><span>Por Flipper</span><span>Lectura: 6 min</span><span>16 partidos</span></div>
+    <div class="eyebrow" id="stamp"></div>
+    <h1>Apuestas <em>NFL</em></h1>
+    <p class="dek" id="lede"></p>
+    <nav class="weeks" id="weeknav" aria-label="Semanas" style="margin-top:16px"></nav>
   </div>
 
-  <article class="dog" id="underdog">
-    <div class="dog-head">
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <span class="tag">Underdog de la semana</span>
-        <h2>Cleveland Browns</h2>
-        <div class="eyebrow">vs Pittsburgh Steelers · Jueves por la noche</div>
-      </div>
-      <div class="line-chip">CLE +2.5</div>
-    </div>
-    <p>Partido de división, en Cleveland y con una línea corta. Pittsburgh llega como favorito por apenas 2.5 puntos, así que las casas lo ven casi parejo.</p>
-    <ul>
-      <li><strong>La duda es Aaron Rodgers en pase profundo.</strong> En las semanas 1 y 2 completó 0 de 9 pases de 20+ yardas en el aire. Contra Cincinnati mejoró: 2 de 5, 61 yardas y 2 touchdowns.</li>
-      <li><strong>Nuestra lectura:</strong> una buena semana no hace tendencia. Si Rodgers vuelve a fallar lejos, Pittsburgh tiene que avanzar en series largas, y eso favorece al local en un juego cerrado.</li>
-      <li><strong>Qué significa +2.5:</strong> apostando a Cleveland con el hándicap, ganas si los Browns ganan el partido o si pierden por 1 o 2 puntos.</li>
-    </ul>
-    <p class="note">Esto es una opinión, no una garantía. Revisa la línea en tu casa de apuestas antes de jugar: puede moverse. Si cambiamos el pick, lo actualizamos aquí antes de la patada.</p>
-  </article>
-
-  <aside class="explain">
-    <h3>¿Nuevo en esto? La línea en 20 segundos</h3>
-    <p>Cuando ves <strong>Steelers -2.5</strong>, quiere decir que Pittsburgh es favorito y "regala" 2.5 puntos. Para que gane esa apuesta tiene que ganar por 3 o más. El medio punto evita empates. El otro lado, <strong>Browns +2.5</strong>, recibe esos puntos.</p>
-  </aside>
-
-  <section class="theme" id="presion">
-    <div class="eyebrow">Tema 1</div>
-    <h2>El que presiona al QB, manda</h2>
-    <p>Esta semana hay varios partidos donde la línea ofensiva contra la presión defensiva explica casi todo.</p>
-    <div class="game"><div class="sp">MIN -11</div><h3>Dolphins en Vikings</h3><p>Minnesota es primero en capturas y en porcentaje de capturas. Miami perdió a De'Von Achane por toda la temporada y ya bloqueaba mal. Con esa diferencia en las trincheras, una línea de 11 no se ve exagerada.</p></div>
-    <div class="game"><div class="sp">HOU -2.5</div><h3>Cowboys en Texans</h3><p>Houston está tercero en capturas y presiona al QB en casi 4 de cada 10 pases. Si Dak Prescott tiene tiempo, esto se vuelve un partido de muchos puntos, y ese no es el juego que le conviene a Houston.</p></div>
-    <div class="game"><div class="sp">SF -2.5</div><h3>Broncos en 49ers</h3><p>El lado contrario: San Francisco no ha permitido una sola captura en 2026. Si Denver no llega a Brock Purdy, el ataque irá contra el esquinero Riley Moss.</p></div>
-    <div class="game"><div class="sp">KC -4.5</div><h3>Chiefs en Raiders</h3><p>La defensa de Las Vegas va en serio: top 4 en capturas y un novato, Hezekiah Masses, con 3 intercepciones en dos juegos. Buena prueba para saber si el pase de Kansas City ya volvió.</p></div>
+  <section class="theme" aria-labelledby="h-bets">
+    <div class="eyebrow">Las jugadas</div>
+    <h2 id="h-bets">2 apuestas y 1 parlay</h2>
+    <p>Momio de referencia; confírmalo en tu casa antes de jugar.</p>
+    <div class="tickets" id="tickets"></div>
   </section>
 
-  <section class="theme" id="suelo">
-    <div class="eyebrow">Tema 2</div>
-    <h2>Partidos que se ganan por tierra</h2>
-    <p>Equipos que viven de correr contra defensas que no dejan correr.</p>
-    <div class="game"><div class="sp">IND -3.5</div><h3>Commanders vs Colts <span class="eyebrow">(Londres)</span></h3><p>Indianapolis va a donde lo lleve Jonathan Taylor. Washington permite 3.2 yardas por acarreo. Si lo frenan, el partido queda en manos de Daniel Jones.</p></div>
-    <div class="game"><div class="sp">BAL -11.5</div><h3>Titans en Ravens</h3><p>Tennessee es el equipo que más jugadas de carrera ha enfrentado. Enfrente está Derrick Henry y Baltimore, que corre todo lo que puede.</p></div>
-    <div class="game"><div class="sp">CHI -3</div><h3>Jets en Bears</h3><p>Chicago es segundo en carreras planeadas. La defensa de los Jets contra la carrera ha sido sólida, pero esta es su prueba más dura del año.</p></div>
-    <div class="game"><div class="sp">GB -4</div><h3>Packers en Buccaneers</h3><p>Tampa Bay está entre las mejores defensas contra la carrera. Green Bay ha bloqueado mal para correr, así que puede terminar dependiendo solo del pase.</p></div>
-    <div class="game"><div class="sp">NO -2.5</div><h3>Falcons en Saints</h3><p>Atlanta es la defensa que menos yardas por carrera planeada ha permitido. Sin Travis Etienne, a los Saints les va a costar correr.</p></div>
+  <section class="theme" aria-labelledby="h-dogs">
+    <div class="eyebrow">Contra Vegas</div>
+    <h2 id="h-dogs">Nuestros underdogs</h2>
+    <div class="tickets" id="dogs"></div>
   </section>
 
-  <section class="theme" id="coberturas">
-    <div class="eyebrow">Tema 3</div>
-    <h2>Coberturas con hoyos (y una que no)</h2>
-    <p>Donde un esquinero o un tight end pueden cambiar el marcador.</p>
-    <div class="game"><div class="sp">DET -3.5</div><h3>Lions en Panthers</h3><p>Detroit juega sin tres de sus safeties y ya ha permitido 6 touchdowns a tight ends. Bryce Young lidera la liga en yardas por pase profundo. Huele a partido de muchos puntos.</p></div>
-    <div class="game"><div class="sp">NYG -2.5</div><h3>Cardinals en Giants</h3><p>Arizona ha permitido 16 recepciones en 18 envíos a tight ends. Isaiah Likely, de los Giants, es justo ese tipo de jugador.</p></div>
-    <div class="game"><div class="sp">CIN -2.5</div><h3>Jaguars en Bengals</h3><p>El esquinero Montaric Brown ha permitido 12.8 yardas por envío. Cincinnati tiene receptores para aprovecharlo.</p></div>
-    <div class="game"><div class="sp">BUF -6.5</div><h3>Patriots en Bills</h3><p>La excepción: Christian Gonzalez, de New England, permite 2.4 yardas por envío. Si los esquineros de los Patriots aguantan, la sorpresa en Buffalo es posible.</p></div>
-    <div class="game"><div class="sp">SEA -7</div><h3>Chargers en Seahawks</h3><p>Todo depende de si regresan los safeties Julian Love y Ty Okada. Sin ellos, los Chargers pueden mantenerse cerca.</p></div>
-  </section>
-
-  <section class="theme" id="especiales">
-    <div class="eyebrow">Tema 4</div>
-    <h2>El detalle que nadie ve</h2>
-    <div class="game"><div class="sp">LAR -3</div><h3>Rams en Eagles</h3><p>Equipos especiales. Los Rams son últimos en regreso de patadas y están abajo en despejes. En un partido cerrado, eso puede valer un touchdown.</p></div>
-  </section>
-
-  <section class="theme" id="tabla">
-    <div class="eyebrow">Resumen</div>
-    <h2>Las 16 líneas de la semana</h2>
-    <p>Momios de casas de apuestas de Las Vegas al 29 de septiembre. El favorito va en <strong class="fav">negritas</strong> con la marca <span class="fav-badge">FAV</span>. Las líneas cambian: confirma en tu casa antes de apostar.</p>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th>Visitante</th><th>Local</th><th>Línea del favorito</th><th>Tema</th></tr></thead>
-        <tbody>
-          <tr class="hl"><td><strong class="fav">Steelers</strong> <span class="fav-badge">FAV</span></td><td>Browns <span class="dog-badge">Underdog FB</span></td><td class="num">PIT -2.5</td><td>Underdog: CLE +2.5</td></tr>
-          <tr><td>Commanders</td><td><strong class="fav">Colts (Londres)</strong> <span class="fav-badge">FAV</span></td><td class="num">IND -3.5</td><td>Carrera</td></tr>
-          <tr><td>Titans</td><td><strong class="fav">Ravens</strong> <span class="fav-badge">FAV</span></td><td class="num">BAL -11.5</td><td>Carrera</td></tr>
-          <tr><td>Patriots</td><td><strong class="fav">Bills</strong> <span class="fav-badge">FAV</span></td><td class="num">BUF -6.5</td><td>Cobertura</td></tr>
-          <tr><td>Jets</td><td><strong class="fav">Bears</strong> <span class="fav-badge">FAV</span></td><td class="num">CHI -3</td><td>Carrera</td></tr>
-          <tr><td>Jaguars</td><td><strong class="fav">Bengals</strong> <span class="fav-badge">FAV</span></td><td class="num">CIN -2.5</td><td>Cobertura</td></tr>
-          <tr><td>Cowboys</td><td><strong class="fav">Texans</strong> <span class="fav-badge">FAV</span></td><td class="num">HOU -2.5</td><td>Presión</td></tr>
-          <tr><td>Cardinals</td><td><strong class="fav">Giants</strong> <span class="fav-badge">FAV</span></td><td class="num">NYG -2.5</td><td>Cobertura</td></tr>
-          <tr><td><strong class="fav">Rams</strong> <span class="fav-badge">FAV</span></td><td>Eagles</td><td class="num">LAR -3</td><td>Especiales</td></tr>
-          <tr><td><strong class="fav">Packers</strong> <span class="fav-badge">FAV</span></td><td>Buccaneers</td><td class="num">GB -4</td><td>Carrera</td></tr>
-          <tr><td>Dolphins</td><td><strong class="fav">Vikings</strong> <span class="fav-badge">FAV</span></td><td class="num">MIN -11</td><td>Presión</td></tr>
-          <tr><td><strong class="fav">Chiefs</strong> <span class="fav-badge">FAV</span></td><td>Raiders</td><td class="num">KC -4.5</td><td>Presión</td></tr>
-          <tr><td>Chargers</td><td><strong class="fav">Seahawks</strong> <span class="fav-badge">FAV</span></td><td class="num">SEA -7</td><td>Cobertura</td></tr>
-          <tr><td>Broncos</td><td><strong class="fav">49ers</strong> <span class="fav-badge">FAV</span></td><td class="num">SF -2.5</td><td>Presión</td></tr>
-          <tr><td><strong class="fav">Lions</strong> <span class="fav-badge">FAV</span></td><td>Panthers</td><td class="num">DET -3.5</td><td>Cobertura</td></tr>
-          <tr><td>Falcons</td><td><strong class="fav">Saints</strong> <span class="fav-badge">FAV</span></td><td class="num">NO -2.5</td><td>Carrera</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="share" id="compartir">
-    <h2>¿Te sirvió? Pásalo a tu grupo de la quiniela</h2>
-    <p>Cada semana: underdog, claves de los partidos y líneas explicadas en corto.</p>
-    <div class="btns">
-      <a class="btn primary" id="wa" href="https://wa.me/" target="_blank" rel="noopener">Compartir en WhatsApp</a>
-      <a class="btn" id="xshare" href="https://x.com/intent/post" target="_blank" rel="noopener">Compartir en X</a>
-      <button class="btn" id="copy" type="button">Copiar link</button>
-    </div>
-    <span id="copied" aria-live="polite"></span>
+  <section class="theme" aria-labelledby="h-picks">
+    <div class="eyebrow">Juego por juego</div>
+    <h2 id="h-picks">Mis picks de la semana</h2>
+    <p>Del jueves al lunes, hora Cancún. Probabilidad de Vegas = moneyline del mercado sin la comisión de la casa.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Juego</th><th>Hora</th><th>Mi pick</th><th>Favorito de Vegas</th><th>Moneyline (visita / local)</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
   </section>
 
   <footer>
-    <p>Momios tomados de casas de apuestas de Las Vegas (29 sep 2026). Algunos datos de juego, vía Pickwatch. Análisis y opiniones: FlipperBet.</p>
+    <p id="src"></p>
     <p><strong>Solo mayores de 18.</strong> Apuesta solo lo que puedas perder. Esto es contenido de opinión y entretenimiento; ningún pick está garantizado.</p>
   </footer>
 </main>
 
 <script>
-const SHARE_URL = "https://jlmz2010.github.io/flipperbet/";
-const TXT = "FlipperBet NFL Semana 4: underdog del jueves y claves de los 16 partidos 🏈";
-(function(){
-  const url = SHARE_URL === "PENDIENTE" ? "" : SHARE_URL;
-  document.getElementById("wa").href = "https://wa.me/?text=" + encodeURIComponent(TXT + (url ? " " + url : ""));
-  document.getElementById("xshare").href = "https://x.com/intent/post?text=" + encodeURIComponent(TXT) + (url ? "&url=" + encodeURIComponent(url) : "");
-  const msg = document.getElementById("copied");
-  document.getElementById("copy").addEventListener("click", function(){
-    if(!url){ msg.textContent = "Link aún no disponible."; return; }
-    try{
-      navigator.clipboard.writeText(url).then(function(){ msg.textContent = "Link copiado."; }, function(){ msg.textContent = url; });
-    }catch(e){ msg.textContent = url; }
+/* ===== DATOS: una entrada por semana. Juegos en orden cronológico. =====
+   ml = [visita, local] · pick = mi pick · fav/pct = favorito de Vegas y % sin vig
+   dogs = lista de underdogs (label, team, code, game, when, ml, pct, favTeam, favPct, text) */
+const DATA = {
+  current: 4,
+  weeks: {
+    4: {
+      stamp: "Semana 4 · momios al jue 1 oct 2026",
+      lede: "Esta semana vamos contra Vegas con Dallas, Cleveland y Atlanta, y con los Rams en Filadelfia. Aquí están las jugadas que yo haría.",
+      src: "Momios tomados de casas de apuestas (1 oct 2026). Análisis y opiniones: FlippBetBlog.",
+      bets: [
+        { kind:"Apuesta 1", title:"Cowboys ML", legs:["Dallas gana en Houston"], odds:"+140", prob:"Vegas: 40.9%", when:"dom 12:00p", why:"Nuestro underdog principal: Dallas paga más de lo que arriesgas con 40.9% de probabilidad según el mercado." },
+        { kind:"Apuesta 2", title:"PIT @ CLE Bajas 38", legs:["Total de puntos: menos de 38 · PIT @ CLE"], odds:"Sin dato", prob:"Total de puntos", when:"jue 7:15p", why:"Juego de división con marcador corto. Sin momio de referencia: confírmalo en tu casa." },
+        { kind:"Parlay", title:"Eagles +7 + Cowboys + Browns", legs:["Eagles +7 (hándicap alterno) −228","Cowboys ML +140","Browns ML +130"], odds:"+694", prob:"3 juegos · aprox.", when:"jue 7:15p y dom 12:00p", why:"Dos de nuestros underdogs a ganar directo y los Rams sin paliza en Filadelfia. Momio aproximado multiplicando las tres patas; confírmalo en tu casa." }
+      ],
+      dogs: [
+        { label:"Underdog por números y mío", team:"Cowboys", code:"DAL", game:"DAL @ HOU", when:"dom 12:00p", ml:"+140", pct:40.9, favTeam:"HOU", favPct:59.1, text:"Vegas le da 59.1% a Houston; nosotros vamos con Dallas a ganar directo." },
+        { label:"Mi underdog", team:"Browns", code:"CLE", game:"PIT @ CLE", when:"jue 7:15p", ml:"+130", pct:42.4, favTeam:"PIT", favPct:57.6, text:"Partido de división en casa y con línea corta. Vamos con Cleveland." },
+        { label:"Mi underdog", team:"Falcons", code:"ATL", game:"ATL @ NO", when:"lun 7:15p", ml:"+125", pct:43.0, favTeam:"NO", favPct:57.0, text:"Atlanta frena la carrera y Nueva Orleans llega sin Travis Etienne. Vamos con los Falcons." }
+      ],
+      games: [
+        {g:"PIT @ CLE", t:"jue 7:15p",  ml:["-143","+131"], fav:"PIT", pct:57.6, pick:"CLE"},
+        {g:"IND @ WSH", t:"dom 8:30a",  ml:["-196","+165"], fav:"IND", pct:63.7, pick:"IND"},
+        {g:"NE @ BUF",  t:"dom 12:00p", ml:["+250","-303"], fav:"BUF", pct:72.5, pick:"BUF"},
+        {g:"NYJ @ CHI", t:"dom 12:00p", ml:["+155","-175"], fav:"CHI", pct:61.9, pick:"CHI"},
+        {g:"JAX @ CIN", t:"dom 12:00p", ml:["+120","-141"], fav:"CIN", pct:56.3, pick:"CIN"},
+        {g:"ARI @ NYG", t:"dom 12:00p", ml:["-139","+120"], fav:"ARI", pct:56.1, pick:"ARI"},
+        {g:"LAR @ PHI", t:"dom 12:00p", ml:["-164","+140"], fav:"LAR", pct:59.9, pick:"LAR"},
+        {g:"GB @ TB",   t:"dom 12:00p", ml:["-182","+153"], fav:"GB",  pct:62.0, pick:"GB"},
+        {g:"TEN @ BAL", t:"dom 12:00p", ml:["+510","-714"], fav:"BAL", pct:84.3, pick:"BAL"},
+        {g:"DAL @ HOU", t:"dom 12:00p", ml:["+135","-159"], fav:"HOU", pct:59.1, pick:"DAL"},
+        {g:"MIA @ MIN", t:"dom 3:05p",  ml:["+460","-625"], fav:"MIN", pct:82.8, pick:"MIN"},
+        {g:"KC @ LV",   t:"dom 3:25p",  ml:["-217","+180"], fav:"KC",  pct:65.7, pick:"KC"},
+        {g:"DEN @ SF",  t:"dom 3:25p",  ml:["+125","-147"], fav:"SF",  pct:57.2, pick:"SF"},
+        {g:"LAC @ SEA", t:"dom 3:25p",  ml:["+290","-345"], fav:"SEA", pct:75.1, pick:null},
+        {g:"DET @ CAR", t:"dom 7:20p",  ml:["-196","+165"], fav:"DET", pct:63.7, pick:"DET"},
+        {g:"ATL @ NO",  t:"lun 7:15p",  ml:["+125","-143"], fav:"NO",  pct:57.0, pick:"ATL"}
+      ]
+    }
+  }
+};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function nav(active){
+  const n=$("#weeknav"); n.innerHTML="";
+  Object.keys(DATA.weeks).map(Number).sort((a,b)=>a-b).forEach(k=>{
+    const b=document.createElement("button"); b.type="button"; b.textContent="Semana "+k;
+    b.setAttribute("aria-current", k===active?"true":"false"); b.addEventListener("click",()=>show(k)); n.appendChild(b);
   });
-})();
+}
+function show(k){
+  const w=DATA.weeks[k]; nav(k);
+  $("#stamp").textContent=w.stamp||""; $("#lede").textContent=w.lede||""; $("#src").textContent=w.src||"";
+  $("#tickets").innerHTML=(w.bets&&w.bets.length)?w.bets.map(b=>`
+    <article class="ticket ${b.kind==='Parlay'?'parlay':''}">
+      <div class="tt"><span class="kind">${esc(b.kind)}</span><span class="eyebrow">${esc(b.prob)}</span></div>
+      <div class="tb"><h3>${esc(b.title)}</h3><ul class="legs">${b.legs.map(l=>`<li>${esc(l)}</li>`).join("")}</ul><p class="why">${esc(b.why)}</p></div>
+      <div class="tf"><div class="odds">${esc(b.odds)}<small>Momio</small></div><div class="when">${esc(b.when)}</div></div>
+    </article>`).join(""):`<div class="empty">Las jugadas de esta semana salen pronto.</div>`;
+  const D=w.dogs||[];
+  $("#dogs").innerHTML=D.length?D.map(d=>`
+    <article class="ticket">
+      <div class="tt"><span class="kind">${esc(d.label)}</span><span class="eyebrow">${esc(d.game)} · ${esc(d.when)}</span></div>
+      <div class="tb"><h3>${esc(d.team)} ${esc(d.ml)}</h3><p>${esc(d.text)}</p>
+        <div class="meter"><span class="eyebrow">Probabilidad según Vegas</span>
+          <div class="bar" role="img" aria-label="${esc(d.code)} ${d.pct}% contra ${esc(d.favTeam)} ${d.favPct}%"><i style="width:${d.pct}%;background:var(--gold)"></i><i style="width:${d.favPct}%;background:var(--muted);opacity:.4"></i></div>
+          <div class="mrow"><span>${esc(d.code)} ${d.pct}%</span><span>${esc(d.favTeam)} ${d.favPct}%</span></div></div></div>
+      <div class="tf"><div class="odds">${esc(d.ml)}<small>$100 ganan $${parseInt(d.ml)||0}</small></div></div>
+    </article>`).join(""):`<div class="empty">Esta semana vamos con todos los favoritos.</div>`;
+  $("#rows").innerHTML=w.games.map(x=>{
+    const against=!!x.pick && x.pick!==x.fav; const [a,h]=x.g.split(/ @ | vs /);
+    return `<tr class="${against?'against':''}"><td><strong>${esc(x.g)}</strong></td><td class="num">${esc(x.t)}</td>
+      <td class="pk">${esc(x.pick||'Pendiente')}</td><td class="num">${esc(x.fav)} ${x.pct.toFixed(1)}%</td>
+      <td class="num">${esc(a)} <b>${esc(x.ml[0])}</b> / ${esc(h)} <b>${esc(x.ml[1])}</b></td>
+      <td>${!x.pick?'':against?'<span class="vs">Contra Vegas</span>':'<span class="wv">Con Vegas</span>'}</td></tr>`;
+  }).join("");
+}
+let start=DATA.current; const hh=(location.hash||"").replace("#","");
+if(/^s\d+$/.test(hh)&&DATA.weeks[+hh.slice(1)]) start=+hh.slice(1);
+show(start);
 </script>
 </body>
 </html>
