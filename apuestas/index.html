@@ -106,6 +106,13 @@ tr:last-child td{border-bottom:0}
 .fav-badge{display:inline-block;font-family:var(--f-mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;background:var(--ocean);color:var(--on-ocean);padding:2px 6px;border-radius:3px;vertical-align:2px}
 .dog-badge{display:inline-block;font-family:var(--f-mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;background:var(--gold);color:#1c1405;padding:2px 6px;border-radius:3px;vertical-align:2px;white-space:nowrap}
 tr.hl td{background:var(--gold-soft)}
+:root{--win-bg:#e1f4e7;--win-line:#1f8a4c;--win-deep:#14663a;--win-on:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--win-bg:#0f2e1d;--win-line:#3ecf7a;--win-deep:#3ecf7a;--win-on:#04210f}}
+:root[data-theme="dark"]{--win-bg:#0f2e1d;--win-line:#3ecf7a;--win-deep:#3ecf7a;--win-on:#04210f}
+.won-badge{display:inline-block;font-family:var(--f-mono);font-size:12px;font-weight:800;letter-spacing:.1em;background:var(--win-deep);color:var(--win-on);border:2px solid var(--gold);padding:2px 8px;border-radius:3px;vertical-align:middle;white-space:nowrap}
+.dogcard.won,.ticket.won{background:var(--win-bg);border:2px solid var(--win-line)}
+.ticket.won .tt{border-bottom-color:var(--win-line)}
+tr.hl.won td{background:var(--win-bg)}
 
 /* Compartir */
 .share{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:12px}
@@ -220,7 +227,7 @@ const DATA = {
       dogs: [
         { label:"Underdog por números y mío", team:"Cowboys", code:"DAL", game:"DAL @ HOU", when:"dom 12:00p", ml:"+140", pct:41.8, favTeam:"HOU", favPct:58.2, text:"Vegas le da 58.2% a Houston; nosotros vamos con Dallas a ganar directo." },
         { label:"Mi underdog", team:"Falcons", code:"ATL", game:"ATL @ NO", when:"lun 7:15p", ml:"+125", pct:45.7, favTeam:"NO", favPct:54.3, text:"Atlanta frena la carrera y Nueva Orleans llega sin Travis Etienne. Vamos con los Falcons." },
-        { label:"Mi underdog · ganó", team:"Browns", code:"CLE", game:"PIT @ CLE", when:"jue 7:15p", ml:"+130", pct:42.4, favTeam:"PIT", favPct:57.6, text:"Ganó: Cleveland 27, Pittsburgh 24." }
+        { label:"Mi underdog", won:true, team:"Browns", code:"CLE", game:"PIT @ CLE", when:"jue 7:15p", ml:"+130", pct:42.4, favTeam:"PIT", favPct:57.6, text:"Ganó: Cleveland 27, Pittsburgh 24." }
       ],
       games: [
         {g:"PIT @ CLE", t:"jue 7:15p",  ml:["-143","+131"], fav:"PIT", pct:57.6, pick:"CLE"},
@@ -253,19 +260,20 @@ function nav(active){
     b.setAttribute("aria-current", k===active?"true":"false"); b.addEventListener("click",()=>show(k)); n.appendChild(b);
   });
 }
+function legHtml(l){const m=/^(.*) · ganó (.*)$/.exec(l);return m?esc(m[1])+' <span class="won-badge">GANÓ</span> '+esc(m[2]):esc(l)}
 function show(k){
   const w=DATA.weeks[k]; nav(k);
   $("#stamp").textContent=w.stamp||""; $("#lede").textContent=w.lede||""; $("#src").textContent=w.src||"";
   $("#tickets").innerHTML=(w.bets&&w.bets.length)?w.bets.map(b=>`
     <article class="ticket ${b.kind==='Parlay'?'parlay':''}">
       <div class="tt"><span class="kind">${esc(b.kind)}</span><span class="eyebrow">${esc(b.prob)}</span></div>
-      <div class="tb"><h3>${esc(b.title)}</h3><ul class="legs">${b.legs.map(l=>`<li>${esc(l)}</li>`).join("")}</ul><p class="why">${esc(b.why)}</p></div>
+      <div class="tb"><h3>${esc(b.title)}</h3><ul class="legs">${b.legs.map(l=>`<li>${legHtml(l)}</li>`).join("")}</ul><p class="why">${esc(b.why)}</p></div>
       <div class="tf"><div class="odds">${esc(b.odds)}<small>Momio</small></div><div class="when">${esc(b.when)}</div></div>
     </article>`).join(""):`<div class="empty">Las jugadas de esta semana salen pronto.</div>`;
   const D=w.dogs||[];
   $("#dogs").innerHTML=D.length?D.map(d=>`
-    <article class="ticket">
-      <div class="tt"><span class="kind">${esc(d.label)}</span><span class="eyebrow">${esc(d.game)} · ${esc(d.when)}</span></div>
+    <article class="ticket${d.won?' won':''}">
+      <div class="tt"><span style="display:flex;gap:8px;align-items:center"><span class="kind">${esc(d.label)}</span>${d.won?'<span class="won-badge">GANÓ</span>':''}</span><span class="eyebrow">${esc(d.game)} · ${esc(d.when)}</span></div>
       <div class="tb"><h3>${esc(d.team)} ${esc(d.ml)}</h3><p>${esc(d.text)}</p>
         <div class="meter"><span class="eyebrow">Probabilidad según Vegas</span>
           <div class="bar" role="img" aria-label="${esc(d.code)} ${d.pct}% contra ${esc(d.favTeam)} ${d.favPct}%"><i style="width:${d.pct}%;background:var(--gold)"></i><i style="width:${d.favPct}%;background:var(--muted);opacity:.4"></i></div>
