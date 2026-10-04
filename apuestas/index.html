@@ -97,7 +97,7 @@ section.theme > p{max-width:62ch}
 
 /* Tabla */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--paper)}
-table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:720px}
 th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
 th{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
 td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -112,6 +112,9 @@ tr.hl td{background:var(--gold-soft)}
 .won-badge{display:inline-block;font-family:var(--f-mono);font-size:12px;font-weight:800;letter-spacing:.1em;background:var(--win-deep);color:var(--win-on);border:2px solid var(--gold);padding:2px 8px;border-radius:3px;vertical-align:middle;white-space:nowrap}
 .dogcard.won,.ticket.won{background:var(--win-bg);border:2px solid var(--win-line)}
 .ticket.won .tt{border-bottom-color:var(--win-line)}
+.lost-badge{display:inline-block;font-family:var(--f-mono);font-size:12px;font-weight:800;letter-spacing:.1em;background:transparent;color:var(--warn);border:2px solid var(--warn);padding:1px 7px;border-radius:3px;vertical-align:middle;white-space:nowrap}
+.ticket.lost{opacity:.72}
+.res{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
 tr.hl.won td{background:var(--win-bg)}
 
 /* Compartir */
@@ -195,9 +198,9 @@ tr.against td{background:var(--gold-soft)}
   <section class="theme" aria-labelledby="h-picks">
     <div class="eyebrow">Juego por juego</div>
     <h2 id="h-picks">Mis picks de la semana</h2>
-    <p>Del jueves al lunes, hora Cancún. Probabilidad de Vegas = moneyline del mercado sin la comisión de la casa.</p>
+    <p>Del jueves al lunes, hora Cancún. Probabilidad de Vegas = moneyline del mercado sin la comisión de la casa. <strong id="record"></strong></p>
     <div class="tbl-wrap"><table>
-      <thead><tr><th>Juego</th><th>Hora</th><th>Mi pick</th><th>Favorito de Vegas</th><th>Moneyline (visita / local)</th><th></th></tr></thead>
+      <thead><tr><th>Juego</th><th>Hora</th><th>Mi pick</th><th>Favorito de Vegas</th><th>Moneyline (visita / local)</th><th></th><th>Resultado</th></tr></thead>
       <tbody id="rows"></tbody>
     </table></div>
   </section>
@@ -210,36 +213,36 @@ tr.against td{background:var(--gold-soft)}
 
 <script>
 /* ===== DATOS: una entrada por semana. Juegos en orden cronológico. =====
-   ml = [visita, local] · pick = mi pick · fav/pct = favorito de Vegas y % sin vig
+   ml = [visita, local] · pick = mi pick · fav/pct = favorito de Vegas y % sin vig · r = [puntos visita, puntos local] cuando termina
    dogs = lista de underdogs (label, team, code, game, when, ml, pct, favTeam, favPct, text) */
 const DATA = {
   current: 4,
   weeks: {
     4: {
-      stamp: "Semana 4 · momios al dom 4 oct 2026",
-      lede: "Cleveland ya nos dio el primer underdog de la semana (27-24). Para domingo y lunes seguimos contra Vegas con Dallas y Atlanta, y con los Rams en Filadelfia.",
+      stamp: "Semana 4 · resultados al dom 4 oct 2026, 3:15 pm",
+      lede: "Dallas ganó en Houston 34-30: segundo underdog de la semana y, con él, pegaron la Apuesta 1 y el parlay de +694. New England sorprendió en Buffalo y tumbó la Apuesta 2. Mis picks van 6-4; falta Atlanta el lunes.",
       src: "Momios tomados de casas de apuestas (4 oct 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"Cowboys ML", legs:["Dallas gana en Houston"], odds:"+140", prob:"Vegas: 41.8%", when:"dom 12:00p", why:"Nuestro underdog principal: Dallas paga más de lo que arriesgas con 41.8% de probabilidad según el mercado." },
-        { kind:"Apuesta 2", title:"Bills ML + Rams ML", legs:["Buffalo gana vs. New England","Rams ganan en Filadelfia"], odds:"-102", prob:"Vegas: 46.7%", when:"dom 12:00p", why:"Dos favoritos que también son nuestros picks, juntos para pagar casi parejo. Confirma el momio en tu casa." },
-        { kind:"Parlay", title:"Eagles +7 + Cowboys + Browns", legs:["Eagles +7 (hándicap alterno) −228","Cowboys ML +140","Browns ML +130 · ganó 27-24"], odds:"+694", prob:"3 juegos · aprox.", when:"dom 12:00p", why:"La pata de Cleveland ya pegó. Faltan Dallas a ganar directo y los Rams sin paliza en Filadelfia. Momio aproximado multiplicando las tres patas; confírmalo en tu casa." }
+        { kind:"Apuesta 1", won:true, title:"Cowboys ML", legs:["Dallas gana en Houston · ganó 34-30"], odds:"+140", prob:"Vegas: 41.8%", when:"dom 12:00p", why:"Nuestro underdog principal. Dallas ganó directo en Houston: $100 cobraron $140 de ganancia." },
+        { kind:"Apuesta 2", lost:true, title:"Bills ML + Rams ML", legs:["Buffalo gana vs. New England · perdió 26-29","Rams ganan en Filadelfia · ganó 24-20"], odds:"-102", prob:"Vegas: 46.7%", when:"dom 12:00p", why:"Los Rams cumplieron, pero New England le ganó 29-26 a Buffalo y la combinada se cayó." },
+        { kind:"Parlay", won:true, title:"Eagles +7 + Cowboys + Browns", legs:["Eagles +7 (hándicap alterno) −228 · ganó cubrió (20-24)","Cowboys ML +140 · ganó 34-30","Browns ML +130 · ganó 27-24"], odds:"+694", prob:"3 juegos · aprox.", when:"dom 12:00p", why:"Las tres patas pegaron: Cleveland y Dallas ganaron directo y Filadelfia perdió por menos de 7. Momio aproximado multiplicando las tres patas." }
       ],
       dogs: [
-        { label:"Underdog por números y mío", team:"Cowboys", code:"DAL", game:"DAL @ HOU", when:"dom 12:00p", ml:"+140", pct:41.8, favTeam:"HOU", favPct:58.2, text:"Vegas le da 58.2% a Houston; nosotros vamos con Dallas a ganar directo." },
+        { label:"Underdog por números y mío", won:true, team:"Cowboys", code:"DAL", game:"DAL @ HOU", when:"dom 12:00p", ml:"+140", pct:41.8, favTeam:"HOU", favPct:58.2, text:"Ganó: Dallas 34, Houston 30." },
         { label:"Mi underdog", team:"Falcons", code:"ATL", game:"ATL @ NO", when:"lun 7:15p", ml:"+125", pct:45.7, favTeam:"NO", favPct:54.3, text:"Atlanta frena la carrera y Nueva Orleans llega sin Travis Etienne. Vamos con los Falcons." },
         { label:"Mi underdog", won:true, team:"Browns", code:"CLE", game:"PIT @ CLE", when:"jue 7:15p", ml:"+130", pct:42.4, favTeam:"PIT", favPct:57.6, text:"Ganó: Cleveland 27, Pittsburgh 24." }
       ],
       games: [
-        {g:"PIT @ CLE", t:"jue 7:15p",  ml:["-143","+131"], fav:"PIT", pct:57.6, pick:"CLE"},
-        {g:"IND @ WSH", t:"dom 8:30a",  ml:["-208","+190"], fav:"IND", pct:66.2, pick:"WSH"},
-        {g:"NE @ BUF",  t:"dom 12:00p", ml:["+270","-323"], fav:"BUF", pct:73.9, pick:"BUF"},
-        {g:"NYJ @ CHI", t:"dom 12:00p", ml:["+162","-192"], fav:"CHI", pct:63.3, pick:"CHI"},
-        {g:"JAX @ CIN", t:"dom 12:00p", ml:["+125","-141"], fav:"CIN", pct:56.8, pick:"CIN"},
-        {g:"ARI @ NYG", t:"dom 12:00p", ml:["-135","+118"], fav:"ARI", pct:55.6, pick:"ARI"},
-        {g:"LAR @ PHI", t:"dom 12:00p", ml:["-192","+162"], fav:"LAR", pct:63.3, pick:"LAR"},
-        {g:"GB @ TB",   t:"dom 12:00p", ml:["-164","+140"], fav:"GB",  pct:59.9, pick:"GB"},
-        {g:"TEN @ BAL", t:"dom 12:00p", ml:["+550","-714"], fav:"BAL", pct:85.1, pick:"BAL"},
-        {g:"DAL @ HOU", t:"dom 12:00p", ml:["+130","-154"], fav:"HOU", pct:58.2, pick:"DAL"},
+        {g:"PIT @ CLE", t:"jue 7:15p",  ml:["-143","+131"], fav:"PIT", pct:57.6, pick:"CLE", r:[24,27]},
+        {g:"IND @ WSH", t:"dom 8:30a",  ml:["-208","+190"], fav:"IND", pct:66.2, pick:"WSH", r:[30,13]},
+        {g:"NE @ BUF",  t:"dom 12:00p", ml:["+270","-323"], fav:"BUF", pct:73.9, pick:"BUF", r:[29,26]},
+        {g:"NYJ @ CHI", t:"dom 12:00p", ml:["+162","-192"], fav:"CHI", pct:63.3, pick:"CHI", r:[12,23]},
+        {g:"JAX @ CIN", t:"dom 12:00p", ml:["+125","-141"], fav:"CIN", pct:56.8, pick:"CIN", r:[22,17]},
+        {g:"ARI @ NYG", t:"dom 12:00p", ml:["-135","+118"], fav:"ARI", pct:55.6, pick:"ARI", r:[24,36]},
+        {g:"LAR @ PHI", t:"dom 12:00p", ml:["-192","+162"], fav:"LAR", pct:63.3, pick:"LAR", r:[24,20]},
+        {g:"GB @ TB",   t:"dom 12:00p", ml:["-164","+140"], fav:"GB",  pct:59.9, pick:"GB", r:[17,14]},
+        {g:"TEN @ BAL", t:"dom 12:00p", ml:["+550","-714"], fav:"BAL", pct:85.1, pick:"BAL", r:[18,24]},
+        {g:"DAL @ HOU", t:"dom 12:00p", ml:["+130","-154"], fav:"HOU", pct:58.2, pick:"DAL", r:[34,30]},
         {g:"MIA @ MIN", t:"dom 3:05p",  ml:["+425","-556"], fav:"MIN", pct:81.7, pick:"MIN"},
         {g:"KC @ LV",   t:"dom 3:25p",  ml:["-217","+185"], fav:"KC",  pct:66.1, pick:"KC"},
         {g:"DEN @ SF",  t:"dom 3:25p",  ml:["+125","-147"], fav:"SF",  pct:57.2, pick:"SF"},
@@ -260,13 +263,19 @@ function nav(active){
     b.setAttribute("aria-current", k===active?"true":"false"); b.addEventListener("click",()=>show(k)); n.appendChild(b);
   });
 }
-function legHtml(l){const m=/^(.*) · ganó (.*)$/.exec(l);return m?esc(m[1])+' <span class="won-badge">GANÓ</span> '+esc(m[2]):esc(l)}
+function legHtml(l){const m=/^(.*) · (ganó|perdió) (.*)$/.exec(l);if(!m)return esc(l);return esc(m[1])+(m[2]==='ganó'?' <span class="won-badge">GANÓ</span> ':' <span class="lost-badge">PERDIÓ</span> ')+esc(m[3])}
+function resHtml(x,a,h){
+  if(!x.r) return '<span class="wv">Pendiente</span>';
+  const win=x.r[0]>x.r[1]?a:h, hit=x.pick===win;
+  return `<span class="res">${esc(a)} ${x.r[0]}-${x.r[1]} ${esc(h)}</span> `+(hit?'<span class="won-badge">ACERTÉ</span>':'<span class="lost-badge">FALLÉ</span>');
+}
+function record(w){let g=0,p=0;w.games.forEach(x=>{if(!x.r||!x.pick)return;const [a,h]=x.g.split(/ @ | vs /);(x.pick===(x.r[0]>x.r[1]?a:h))?g++:p++;});return g+p?`Mis picks: ${g}-${p}`:"";}
 function show(k){
   const w=DATA.weeks[k]; nav(k);
-  $("#stamp").textContent=w.stamp||""; $("#lede").textContent=w.lede||""; $("#src").textContent=w.src||"";
+  $("#stamp").textContent=w.stamp||""; $("#record").textContent=record(w); $("#lede").textContent=w.lede||""; $("#src").textContent=w.src||"";
   $("#tickets").innerHTML=(w.bets&&w.bets.length)?w.bets.map(b=>`
-    <article class="ticket ${b.kind==='Parlay'?'parlay':''}">
-      <div class="tt"><span class="kind">${esc(b.kind)}</span><span class="eyebrow">${esc(b.prob)}</span></div>
+    <article class="ticket ${b.kind==='Parlay'?'parlay':''}${b.won?' won':''}${b.lost?' lost':''}">
+      <div class="tt"><span style="display:flex;gap:8px;align-items:center"><span class="kind">${esc(b.kind)}</span>${b.won?'<span class="won-badge">GANÓ</span>':b.lost?'<span class="lost-badge">PERDIÓ</span>':''}</span><span class="eyebrow">${esc(b.prob)}</span></div>
       <div class="tb"><h3>${esc(b.title)}</h3><ul class="legs">${b.legs.map(l=>`<li>${legHtml(l)}</li>`).join("")}</ul><p class="why">${esc(b.why)}</p></div>
       <div class="tf"><div class="odds">${esc(b.odds)}<small>Momio</small></div><div class="when">${esc(b.when)}</div></div>
     </article>`).join(""):`<div class="empty">Las jugadas de esta semana salen pronto.</div>`;
@@ -285,7 +294,8 @@ function show(k){
     return `<tr class="${against?'against':''}"><td><strong>${esc(x.g)}</strong></td><td class="num">${esc(x.t)}</td>
       <td class="pk">${esc(x.pick||'Pendiente')}</td><td class="num">${esc(x.fav)} ${x.pct.toFixed(1)}%</td>
       <td class="num">${esc(a)} <b>${esc(x.ml[0])}</b> / ${esc(h)} <b>${esc(x.ml[1])}</b></td>
-      <td>${!x.pick?'':against?'<span class="vs">Contra Vegas</span>':'<span class="wv">Con Vegas</span>'}</td></tr>`;
+      <td>${!x.pick?'':against?'<span class="vs">Contra Vegas</span>':'<span class="wv">Con Vegas</span>'}</td>
+      <td>${resHtml(x,a,h)}</td></tr>`;
   }).join("");
 }
 let start=DATA.current; const hh=(location.hash||"").replace("#","");
