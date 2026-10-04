@@ -209,36 +209,36 @@ const DATA = {
   current: 4,
   weeks: {
     4: {
-      stamp: "Semana 4 · momios al jue 1 oct 2026",
-      lede: "Esta semana vamos contra Vegas con Dallas, Cleveland y Atlanta, y con los Rams en Filadelfia. Aquí están las jugadas que yo haría.",
-      src: "Momios tomados de casas de apuestas (1 oct 2026). Análisis y opiniones: FlippBetBlog.",
+      stamp: "Semana 4 · momios al dom 4 oct 2026",
+      lede: "Cleveland ya nos dio el primer underdog de la semana (27-24). Para domingo y lunes seguimos contra Vegas con Dallas y Atlanta, y con los Rams en Filadelfia.",
+      src: "Momios tomados de casas de apuestas (4 oct 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"Cowboys ML", legs:["Dallas gana en Houston"], odds:"+140", prob:"Vegas: 40.9%", when:"dom 12:00p", why:"Nuestro underdog principal: Dallas paga más de lo que arriesgas con 40.9% de probabilidad según el mercado." },
-        { kind:"Apuesta 2", title:"PIT @ CLE Bajas 38", legs:["Total de puntos: menos de 38 · PIT @ CLE"], odds:"Sin dato", prob:"Total de puntos", when:"jue 7:15p", why:"Juego de división con marcador corto. Sin momio de referencia: confírmalo en tu casa." },
-        { kind:"Parlay", title:"Eagles +7 + Cowboys + Browns", legs:["Eagles +7 (hándicap alterno) −228","Cowboys ML +140","Browns ML +130"], odds:"+694", prob:"3 juegos · aprox.", when:"jue 7:15p y dom 12:00p", why:"Dos de nuestros underdogs a ganar directo y los Rams sin paliza en Filadelfia. Momio aproximado multiplicando las tres patas; confírmalo en tu casa." }
+        { kind:"Apuesta 1", title:"Cowboys ML", legs:["Dallas gana en Houston"], odds:"+140", prob:"Vegas: 41.8%", when:"dom 12:00p", why:"Nuestro underdog principal: Dallas paga más de lo que arriesgas con 41.8% de probabilidad según el mercado." },
+        { kind:"Apuesta 2", title:"Bills ML + Rams ML", legs:["Buffalo gana vs. New England","Rams ganan en Filadelfia"], odds:"-102", prob:"Vegas: 46.7%", when:"dom 12:00p", why:"Dos favoritos que también son nuestros picks, juntos para pagar casi parejo. Confirma el momio en tu casa." },
+        { kind:"Parlay", title:"Eagles +7 + Cowboys + Browns", legs:["Eagles +7 (hándicap alterno) −228","Cowboys ML +140","Browns ML +130 · ganó 27-24"], odds:"+694", prob:"3 juegos · aprox.", when:"dom 12:00p", why:"La pata de Cleveland ya pegó. Faltan Dallas a ganar directo y los Rams sin paliza en Filadelfia. Momio aproximado multiplicando las tres patas; confírmalo en tu casa." }
       ],
       dogs: [
-        { label:"Underdog por números y mío", team:"Cowboys", code:"DAL", game:"DAL @ HOU", when:"dom 12:00p", ml:"+140", pct:40.9, favTeam:"HOU", favPct:59.1, text:"Vegas le da 59.1% a Houston; nosotros vamos con Dallas a ganar directo." },
-        { label:"Mi underdog", team:"Browns", code:"CLE", game:"PIT @ CLE", when:"jue 7:15p", ml:"+130", pct:42.4, favTeam:"PIT", favPct:57.6, text:"Partido de división en casa y con línea corta. Vamos con Cleveland." },
-        { label:"Mi underdog", team:"Falcons", code:"ATL", game:"ATL @ NO", when:"lun 7:15p", ml:"+125", pct:43.0, favTeam:"NO", favPct:57.0, text:"Atlanta frena la carrera y Nueva Orleans llega sin Travis Etienne. Vamos con los Falcons." }
+        { label:"Underdog por números y mío", team:"Cowboys", code:"DAL", game:"DAL @ HOU", when:"dom 12:00p", ml:"+140", pct:41.8, favTeam:"HOU", favPct:58.2, text:"Vegas le da 58.2% a Houston; nosotros vamos con Dallas a ganar directo." },
+        { label:"Mi underdog", team:"Falcons", code:"ATL", game:"ATL @ NO", when:"lun 7:15p", ml:"+125", pct:45.7, favTeam:"NO", favPct:54.3, text:"Atlanta frena la carrera y Nueva Orleans llega sin Travis Etienne. Vamos con los Falcons." },
+        { label:"Mi underdog · ganó", team:"Browns", code:"CLE", game:"PIT @ CLE", when:"jue 7:15p", ml:"+130", pct:42.4, favTeam:"PIT", favPct:57.6, text:"Ganó: Cleveland 27, Pittsburgh 24." }
       ],
       games: [
         {g:"PIT @ CLE", t:"jue 7:15p",  ml:["-143","+131"], fav:"PIT", pct:57.6, pick:"CLE"},
-        {g:"IND @ WSH", t:"dom 8:30a",  ml:["-196","+165"], fav:"IND", pct:63.7, pick:"IND"},
-        {g:"NE @ BUF",  t:"dom 12:00p", ml:["+250","-303"], fav:"BUF", pct:72.5, pick:"BUF"},
-        {g:"NYJ @ CHI", t:"dom 12:00p", ml:["+155","-175"], fav:"CHI", pct:61.9, pick:"CHI"},
-        {g:"JAX @ CIN", t:"dom 12:00p", ml:["+120","-141"], fav:"CIN", pct:56.3, pick:"CIN"},
-        {g:"ARI @ NYG", t:"dom 12:00p", ml:["-139","+120"], fav:"ARI", pct:56.1, pick:"ARI"},
-        {g:"LAR @ PHI", t:"dom 12:00p", ml:["-164","+140"], fav:"LAR", pct:59.9, pick:"LAR"},
-        {g:"GB @ TB",   t:"dom 12:00p", ml:["-182","+153"], fav:"GB",  pct:62.0, pick:"GB"},
-        {g:"TEN @ BAL", t:"dom 12:00p", ml:["+510","-714"], fav:"BAL", pct:84.3, pick:"BAL"},
-        {g:"DAL @ HOU", t:"dom 12:00p", ml:["+135","-159"], fav:"HOU", pct:59.1, pick:"DAL"},
-        {g:"MIA @ MIN", t:"dom 3:05p",  ml:["+460","-625"], fav:"MIN", pct:82.8, pick:"MIN"},
-        {g:"KC @ LV",   t:"dom 3:25p",  ml:["-217","+180"], fav:"KC",  pct:65.7, pick:"KC"},
+        {g:"IND @ WSH", t:"dom 8:30a",  ml:["-208","+190"], fav:"IND", pct:66.2, pick:"WSH"},
+        {g:"NE @ BUF",  t:"dom 12:00p", ml:["+270","-323"], fav:"BUF", pct:73.9, pick:"BUF"},
+        {g:"NYJ @ CHI", t:"dom 12:00p", ml:["+162","-192"], fav:"CHI", pct:63.3, pick:"CHI"},
+        {g:"JAX @ CIN", t:"dom 12:00p", ml:["+125","-141"], fav:"CIN", pct:56.8, pick:"CIN"},
+        {g:"ARI @ NYG", t:"dom 12:00p", ml:["-135","+118"], fav:"ARI", pct:55.6, pick:"ARI"},
+        {g:"LAR @ PHI", t:"dom 12:00p", ml:["-192","+162"], fav:"LAR", pct:63.3, pick:"LAR"},
+        {g:"GB @ TB",   t:"dom 12:00p", ml:["-164","+140"], fav:"GB",  pct:59.9, pick:"GB"},
+        {g:"TEN @ BAL", t:"dom 12:00p", ml:["+550","-714"], fav:"BAL", pct:85.1, pick:"BAL"},
+        {g:"DAL @ HOU", t:"dom 12:00p", ml:["+130","-154"], fav:"HOU", pct:58.2, pick:"DAL"},
+        {g:"MIA @ MIN", t:"dom 3:05p",  ml:["+425","-556"], fav:"MIN", pct:81.7, pick:"MIN"},
+        {g:"KC @ LV",   t:"dom 3:25p",  ml:["-217","+185"], fav:"KC",  pct:66.1, pick:"KC"},
         {g:"DEN @ SF",  t:"dom 3:25p",  ml:["+125","-147"], fav:"SF",  pct:57.2, pick:"SF"},
-        {g:"LAC @ SEA", t:"dom 3:25p",  ml:["+290","-345"], fav:"SEA", pct:75.1, pick:null},
-        {g:"DET @ CAR", t:"dom 7:20p",  ml:["-196","+165"], fav:"DET", pct:63.7, pick:"DET"},
-        {g:"ATL @ NO",  t:"lun 7:15p",  ml:["+125","-143"], fav:"NO",  pct:57.0, pick:"ATL"}
+        {g:"LAC @ SEA", t:"dom 3:25p",  ml:["+290","-357"], fav:"SEA", pct:75.3, pick:"SEA"},
+        {g:"DET @ CAR", t:"dom 7:20p",  ml:["-200","+170"], fav:"DET", pct:64.3, pick:"DET"},
+        {g:"ATL @ NO",  t:"lun 7:15p",  ml:["+110","-130"], fav:"NO",  pct:54.3, pick:"ATL"}
       ]
     }
   }
