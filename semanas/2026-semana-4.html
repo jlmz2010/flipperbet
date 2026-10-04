@@ -106,6 +106,13 @@ tr:last-child td{border-bottom:0}
 .fav-badge{display:inline-block;font-family:var(--f-mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;background:var(--ocean);color:var(--on-ocean);padding:2px 6px;border-radius:3px;vertical-align:2px}
 .dog-badge{display:inline-block;font-family:var(--f-mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;background:var(--gold);color:#1c1405;padding:2px 6px;border-radius:3px;vertical-align:2px;white-space:nowrap}
 tr.hl td{background:var(--gold-soft)}
+:root{--win-bg:#e1f4e7;--win-line:#1f8a4c;--win-deep:#14663a;--win-on:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--win-bg:#0f2e1d;--win-line:#3ecf7a;--win-deep:#3ecf7a;--win-on:#04210f}}
+:root[data-theme="dark"]{--win-bg:#0f2e1d;--win-line:#3ecf7a;--win-deep:#3ecf7a;--win-on:#04210f}
+.won-badge{display:inline-block;font-family:var(--f-mono);font-size:12px;font-weight:800;letter-spacing:.1em;background:var(--win-deep);color:var(--win-on);border:2px solid var(--gold);padding:2px 8px;border-radius:3px;vertical-align:middle;white-space:nowrap}
+.dogcard.won,.ticket.won{background:var(--win-bg);border:2px solid var(--win-line)}
+.ticket.won .tt{border-bottom-color:var(--win-line)}
+tr.hl.won td{background:var(--win-bg)}
 
 /* Compartir */
 .share{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:12px}
@@ -154,7 +161,7 @@ footer strong{color:var(--warn)}
       <div class="line-chip">3 dogs</div>
     </div>
     <div class="dogs">
-      <div class="dogcard"><span class="eyebrow">Mi underdog · jueves 7:15p · Ganó</span><h3>Browns +130</h3><p><strong>Resultado: Browns 27, Steelers 24.</strong> Partido de división en Cleveland y con línea corta (PIT -2.5): las casas lo ven casi parejo. Si Aaron Rodgers vuelve a fallar en pase profundo, Pittsburgh tendrá que avanzar en series largas.</p></div>
+      <div class="dogcard won"><span class="eyebrow">Mi underdog · jueves 7:15p <span class="won-badge">GANÓ</span></span><h3>Browns +130</h3><p><strong>Resultado: Browns 27, Steelers 24.</strong> Partido de división en Cleveland y con línea corta (PIT -2.5): las casas lo ven casi parejo. Si Aaron Rodgers vuelve a fallar en pase profundo, Pittsburgh tendrá que avanzar en series largas.</p></div>
       <div class="dogcard"><span class="eyebrow">Underdog por números y mío · domingo 12:00p</span><h3>Cowboys +140</h3><p>Houston presiona al QB en casi 4 de cada 10 pases, pero si Dak Prescott tiene tiempo esto se vuelve un partido de muchos puntos, y ese no es el juego que le conviene a Houston.</p></div>
       <div class="dogcard"><span class="eyebrow">Mi underdog · lunes 7:15p</span><h3>Falcons +125</h3><p>Atlanta es la defensa que menos yardas por carrera planeada ha permitido, y sin Travis Etienne a los Saints les va a costar correr. Línea de solo 2.5 puntos.</p></div>
     </div>
@@ -216,7 +223,7 @@ footer strong{color:var(--warn)}
       <table>
         <thead><tr><th>Visitante</th><th>Local</th><th>Línea del favorito</th><th>Tema</th></tr></thead>
         <tbody>
-          <tr class="hl"><td><strong class="fav">Steelers</strong> <span class="fav-badge">FAV</span></td><td>Browns <span class="dog-badge">Underdog FB</span></td><td class="num">PIT -2.5</td><td>Underdog: CLE +130 · Ganó 27-24</td></tr>
+          <tr class="hl won"><td><strong class="fav">Steelers</strong> <span class="fav-badge">FAV</span></td><td>Browns <span class="dog-badge">Underdog FB</span></td><td class="num">PIT -2.5</td><td>Underdog: CLE +130 <span class="won-badge">GANÓ</span> 27-24</td></tr>
           <tr><td>Commanders</td><td><strong class="fav">Colts (Londres)</strong> <span class="fav-badge">FAV</span></td><td class="num">IND -3.5</td><td>Carrera</td></tr>
           <tr><td>Titans</td><td><strong class="fav">Ravens</strong> <span class="fav-badge">FAV</span></td><td class="num">BAL -11.5</td><td>Carrera</td></tr>
           <tr><td>Patriots</td><td><strong class="fav">Bills</strong> <span class="fav-badge">FAV</span></td><td class="num">BUF -6.5</td><td>Cobertura</td></tr>
