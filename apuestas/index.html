@@ -184,7 +184,7 @@ tr.against td{background:var(--gold-soft)}
 
   <section class="theme" aria-labelledby="h-bets">
     <div class="eyebrow">Las jugadas</div>
-    <h2 id="h-bets">2 apuestas y 1 parlay</h2>
+    <h2 id="h-bets">Apuestas y parlay</h2>
     <p>Momio de referencia; confírmalo en tu casa antes de jugar.</p>
     <div class="tickets" id="tickets"></div>
   </section>
@@ -216,8 +216,37 @@ tr.against td{background:var(--gold-soft)}
    ml = [visita, local] · pick = mi pick · fav/pct = favorito de Vegas y % sin vig · r = [puntos visita, puntos local] cuando termina
    dogs = lista de underdogs (label, team, code, game, when, ml, pct, favTeam, favPct, text) */
 const DATA = {
-  current: 4,
+  current: 5,
   weeks: {
+    5: {
+      stamp: "Semana 5 · jueves 8 oct 2026",
+      lede: "Esta semana solo una apuesta pasó nuestros filtros, más un parlay de dos favoritos y un underdog por números: Cleveland en Nueva York.",
+      src: "Momios tomados de casas de apuestas (8 oct 2026). Análisis y opiniones: FlippBetBlog.",
+      bets: [
+        { kind:"Apuesta 1", title:"Bucky Irving anota TD", legs:["Bucky Irving (Buccaneers) anota touchdown en cualquier momento · TB @ DAL"], odds:"+185", prob:"Implícita: 35.1%", when:"jue 7:15p", why:"Apuesta de jugador para el jueves. Si Irving anota en cualquier momento del partido, $100 cobran $185 de ganancia. No depende de quién gane." }
+        ,{ kind:"Parlay", title:"Jaguars + Patriots", legs:["Jaguars ML −370 (Londres) · PHI @ JAX","Patriots ML −200 · LV @ NE"], odds:"−110", prob:"2 juegos · aprox.", when:"dom 8:30a y 12:00p", why:"Dos favoritos en los que coinciden los números y nuestro análisis. Momio aproximado multiplicando las dos patas; confírmalo en tu casa." }
+      ],
+      dogs: [
+        { label:"Underdog por números", team:"Browns", code:"CLE", game:"CLE @ NYJ", when:"dom 12:00p", ml:"+110", pct:45.7, favTeam:"NYJ", favPct:54.3, text:"Línea corta (NYJ -1.5): las casas lo ven casi parejo. Cleveland presiona mejor al QB y frena mejor la carrera; la cobertura de los Jets es su mejor arma." }
+      ],
+      games: [
+        {g:"TB @ DAL", t:"jue 7:15p", ml:["+370","-476"], fav:"DAL", pct:79.5, pick:"DAL"},
+        {g:"PHI @ JAX", t:"dom 8:30a", ml:["+300","-370"], fav:"JAX", pct:75.9, pick:"JAX"},
+        {g:"CHI @ GB", t:"dom 12:00p", ml:["-129","+110"], fav:"CHI", pct:54.2, pick:"CHI"},
+        {g:"HOU @ TEN", t:"dom 12:00p", ml:["-385","+310"], fav:"HOU", pct:76.5, pick:"HOU"},
+        {g:"CIN @ MIA", t:"dom 12:00p", ml:["-303","+250"], fav:"CIN", pct:72.5, pick:""},
+        {g:"LV @ NE", t:"dom 12:00p", ml:["+170","-200"], fav:"NE", pct:64.3, pick:"NE"},
+        {g:"MIN @ NO", t:"dom 12:00p", ml:["-133","+113"], fav:"MIN", pct:54.9, pick:"MIN"},
+        {g:"CLE @ NYJ", t:"dom 12:00p", ml:["+110","-130"], fav:"NYJ", pct:54.3, pick:"CLE"},
+        {g:"IND @ PIT", t:"dom 12:00p", ml:["+122","-143"], fav:"PIT", pct:56.6, pick:"IND"},
+        {g:"NYG @ WSH", t:"dom 12:00p", ml:["+165","-194"], fav:"WSH", pct:63.6, pick:"NYG"},
+        {g:"DEN @ LAC", t:"dom 3:05p", ml:["-182","+153"], fav:"DEN", pct:62.0, pick:"DEN"},
+        {g:"DET @ ARI", t:"dom 3:25p", ml:["-250","+205"], fav:"DET", pct:68.5, pick:"DET"},
+        {g:"SF @ SEA", t:"dom 3:25p", ml:["+145","-169"], fav:"SEA", pct:60.6, pick:""},
+        {g:"BAL @ ATL", t:"dom 7:20p", ml:["+149","-175"], fav:"ATL", pct:61.3, pick:"BAL"},
+        {g:"BUF @ LAR", t:"lun 7:15p", ml:["+145","-172"], fav:"LAR", pct:60.8, pick:"BUF"}
+      ]
+    },
     4: {
       stamp: "Semana 4 · resultados finales al mar 6 oct 2026",
       lede: "Tres de tres: Cleveland, Dallas y Atlanta ganaron directo. Pegaron la Apuesta 1 (Cowboys +140) y el parlay de +694; New England sorprendió en Buffalo y tumbó la Apuesta 2. Mis picks cerraron la semana 11-5.",
