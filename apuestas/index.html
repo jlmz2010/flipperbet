@@ -220,21 +220,22 @@ const DATA = {
   current: 5,
   weeks: {
     5: {
-      stamp: "Semana 5 · actualizado jueves 8 oct 2026",
-      lede: "Para el jueves: Bucky Irving anota TD y una combinada de Tampa Bay. Más tres underdogs para el domingo: Cleveland, Indianapolis y Baltimore.",
+      stamp: "Semana 5 · actualizado sábado 10 oct 2026",
+      lede: "Las dos del jueves pegaron: Bucky Irving anotó y Tampa Bay ganó 24-16 en Dallas. Para el domingo: dos apuestas nuevas (Hurts TD y un parlay de totales) y tres underdogs: Cleveland, Indianapolis y Baltimore.",
       src: "Momios tomados de casas de apuestas (8 oct 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"Bucky Irving anota TD", legs:["Bucky Irving (Buccaneers) anota touchdown en cualquier momento · TB @ DAL"], odds:"+185", prob:"Implícita: 35.1%", when:"jue 7:15p", why:"Apuesta de jugador para el jueves. Si Irving anota en cualquier momento del partido, $100 cobran $185 de ganancia. No depende de quién gane." }
-        ,{ kind:"Apuesta 2", title:"Buccaneers +10.5 y más de 16.5", legs:["Buccaneers +10.5 de hándicap · TB @ DAL","Buccaneers anotan más de 16.5 puntos (17 o más)"], odds:"+100", prob:"Implícita: 50.0%", when:"jue 7:15p", why:"Combinada del mismo juego (cuota 2.00): $100 cobran $100 de ganancia. Pega si Tampa Bay anota 17 o más y no pierde por más de 10. Ojo: llegan 0-4 y con QB suplente; la semana pasada anotaron 14 contra Green Bay." }
+        { kind:"Apuesta 1", won:true, title:"Bucky Irving anota TD", legs:["Bucky Irving (Buccaneers) anota touchdown en cualquier momento · ganó (anotó 2)"], odds:"+185", prob:"Implícita: 35.1%", when:"jue 7:15p", why:"Ganó: Irving anotó dos touchdowns en el 24-16 de Tampa Bay. $100 cobraron $185 de ganancia." }
+        ,{ kind:"Apuesta 2", won:true, title:"Buccaneers +10.5 y más de 16.5", legs:["Buccaneers +10.5 de hándicap · ganó (ganaron 24-16)","Buccaneers anotan más de 16.5 puntos · ganó (anotaron 24)"], odds:"+100", prob:"Implícita: 50.0%", when:"jue 7:15p", why:"Ganó: Tampa Bay ganó el partido 24-16 y pasó los 16.5 puntos. Cuota 2.00: $100 cobraron $100 de ganancia." }
+        ,{ kind:"Apuesta 3", title:"Jalen Hurts anota TD", legs:["Jalen Hurts (Eagles) anota touchdown en cualquier momento · PHI @ JAX (Londres)"], odds:"+195", prob:"Implícita: 33.9%", when:"dom 8:30a", why:"Apuesta de jugador. Hurts lleva 1 touchdown por tierra en 4 partidos y Saquon Barkley probablemente no juega, lo que podría cargar más el juego terrestre en él. Si anota en cualquier momento, $100 cobran $195 de ganancia. No depende de quién gane." }
+        ,{ kind:"Apuesta 4", title:"Raiders y Jets, más de 20.5", legs:["Raiders anotan más de 20.5 puntos (−109) · LV @ NE","Jets anotan más de 20.5 puntos (−115) · CLE @ NYJ"], odds:"+259", prob:"Implícita: 27.9%", when:"dom 12:00p", why:"Dos totales de equipo en una sola apuesta; las dos tienen que pasar. Con el hándicap y el total de las casas, cada equipo queda cerca de 21 puntos, así que la barra de 20.5 está muy justa. $100 cobran $259 de ganancia." }
       ],
-      note: "El sábado pondremos 2 apuestas más para este fin de semana.",
       dogs: [
         { label:"Underdog por números", team:"Browns", code:"CLE", game:"CLE @ NYJ", when:"dom 12:00p", ml:"+110", pct:45.7, favTeam:"NYJ", favPct:54.3, text:"Línea corta (NYJ -1.5): las casas lo ven casi parejo. La clave son los pases cortos de Deshaun Watson; si los Jets no lo frenan ahí, la sorpresa está viva." },
         { label:"Mi underdog", team:"Colts", code:"IND", game:"IND @ PIT", when:"dom 12:00p", ml:"+122", pct:43.4, favTeam:"PIT", favPct:56.6, text:"Se decide con las pérdidas de balón: Rodgers lleva intercepción en tres partidos seguidos. El que cuide el balón probablemente gana." },
         { label:"Mi underdog", team:"Ravens", code:"BAL", game:"BAL @ ATL", when:"dom 7:20p", ml:"+149", pct:38.7, favTeam:"ATL", favPct:61.3, text:"Derrick Henry contra la defensa que menos yardas permite en carreras planeadas. Si Henry rompe esa muralla, Baltimore puede ganar en Atlanta aun sin Lamar Jackson." }
       ],
       games: [
-        {g:"TB @ DAL", t:"jue 7:15p", ml:["+370","-476"], fav:"DAL", pct:79.5, pick:"DAL"},
+        {g:"TB @ DAL", t:"jue 7:15p", ml:["+370","-476"], fav:"DAL", pct:79.5, pick:"DAL", r:[24,16]},
         {g:"PHI @ JAX", t:"dom 8:30a", ml:["+300","-370"], fav:"JAX", pct:75.9, pick:"JAX"},
         {g:"CHI @ GB", t:"dom 12:00p", ml:["-129","+110"], fav:"CHI", pct:54.2, pick:"CHI"},
         {g:"HOU @ TEN", t:"dom 12:00p", ml:["-385","+310"], fav:"HOU", pct:76.5, pick:"HOU"},
