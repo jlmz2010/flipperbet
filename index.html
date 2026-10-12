@@ -110,6 +110,8 @@ tr.hl td{background:var(--gold-soft)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--win-bg:#0f2e1d;--win-line:#3ecf7a;--win-deep:#3ecf7a;--win-on:#04210f}}
 :root[data-theme="dark"]{--win-bg:#0f2e1d;--win-line:#3ecf7a;--win-deep:#3ecf7a;--win-on:#04210f}
 .won-badge{display:inline-block;font-family:var(--f-mono);font-size:12px;font-weight:800;letter-spacing:.1em;background:var(--win-deep);color:var(--win-on);border:2px solid var(--gold);padding:2px 8px;border-radius:3px;vertical-align:middle;white-space:nowrap}
+.lost-badge{display:inline-block;font-family:var(--f-mono);font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--warn);border:2px solid var(--warn);padding:2px 8px;border-radius:3px;vertical-align:middle;white-space:nowrap}
+.dogcard.lost{opacity:.72}
 .dogcard.won,.ticket.won{background:var(--win-bg);border:2px solid var(--win-line)}
 .ticket.won .tt{border-bottom-color:var(--win-line)}
 tr.hl.won td{background:var(--win-bg)}
@@ -145,7 +147,7 @@ footer strong{color:var(--warn)}
 <main class="wrap" style="margin-top:24px">
 
   <div class="hero">
-    <div class="eyebrow">NFL 2026 · Publicado 8 oct · Actualizado 10 oct</div>
+    <div class="eyebrow">NFL 2026 · Publicado 8 oct · Actualizado 12 oct</div>
     <h1>Semana <em>5</em></h1>
     <p class="dek">Lo que puede decidir cada partido, explicado en corto. Más nuestros underdogs de la semana.</p>
     <div class="byline"><span>Por Flipper</span><span>Lectura: 6 min</span><span>15 partidos</span></div>
@@ -161,9 +163,9 @@ footer strong{color:var(--warn)}
       <div class="line-chip">3 underdogs</div>
     </div>
     <div class="dogs">
-      <div class="dogcard"><span class="eyebrow">Underdog por números · domingo 12:00p</span><h3>Browns +110</h3><p>Cleveland viene de ganarle a Pittsburgh y llega a Nueva York como underdog por muy poco. La clave: los pases cortos. Deshaun Watson completó 21 de 25 pases cortos la semana pasada y se vio otro quarterback; si los Jets no lo frenan ahí, la sorpresa está viva. Las casas le dan cerca de 46%.</p></div>
-      <div class="dogcard"><span class="eyebrow">Mi underdog · domingo 12:00p</span><h3>Colts +122</h3><p>En Pittsburgh se decide con las pérdidas de balón. Aaron Rodgers lleva intercepción en tres partidos seguidos y Daniel Jones ha vuelto a perder balones, por eso los Colts lo cuidan: solo 5 pases profundos la semana pasada. El que cuide el balón probablemente gana. Las casas le dan cerca de 43%.</p></div>
-      <div class="dogcard"><span class="eyebrow">Mi underdog · domingo 7:20p</span><h3>Ravens +149</h3><p>Fuerza contra fuerza: Derrick Henry contra la defensa que menos yardas permite en carreras planeadas. Si Henry rompe esa muralla, Baltimore puede ganar en Atlanta. El riesgo: Lamar Jackson casi seguro no juega y Atlanta puede cargarse contra la carrera. Las casas le dan cerca de 39%.</p></div>
+      <div class="dogcard lost"><span class="eyebrow">Underdog por números · domingo 12:00p <span class="lost-badge">PERDIÓ</span></span><h3>Browns +110</h3><p><strong>Resultado: Jets 17, Browns 12.</strong> Cleveland viene de ganarle a Pittsburgh y llega a Nueva York como underdog por muy poco. La clave: los pases cortos. Deshaun Watson completó 21 de 25 pases cortos la semana pasada y se vio otro quarterback; si los Jets no lo frenan ahí, la sorpresa está viva. Las casas le dan cerca de 46%.</p></div>
+      <div class="dogcard lost"><span class="eyebrow">Mi underdog · domingo 12:00p <span class="lost-badge">PERDIÓ</span></span><h3>Colts +122</h3><p><strong>Resultado: Steelers 34, Colts 22.</strong> En Pittsburgh se decide con las pérdidas de balón. Aaron Rodgers lleva intercepción en tres partidos seguidos y Daniel Jones ha vuelto a perder balones, por eso los Colts lo cuidan: solo 5 pases profundos la semana pasada. El que cuide el balón probablemente gana. Las casas le dan cerca de 43%.</p></div>
+      <div class="dogcard won"><span class="eyebrow">Mi underdog · domingo 7:20p <span class="won-badge">GANÓ</span></span><h3>Ravens +149</h3><p><strong>Resultado: Ravens 30, Falcons 23 (tiempo extra).</strong> Fuerza contra fuerza: Derrick Henry contra la defensa que menos yardas permite en carreras planeadas. Si Henry rompe esa muralla, Baltimore puede ganar en Atlanta. El riesgo: Lamar Jackson casi seguro no juega y Atlanta puede cargarse contra la carrera. Las casas le dan cerca de 39%.</p></div>
     </div>
     <ul>
       <li><strong>Por qué Cleveland:</strong> los Browns presionan mejor al quarterback y frenan mejor la carrera que los Jets. Con una línea de apenas 1.5 puntos, todo apunta a un partido de una anotación o menos.</li>
@@ -172,7 +174,7 @@ footer strong{color:var(--warn)}
       <li><strong>Cuánto pagan:</strong> $100 a cada uno dejarían $110, $122 y $149 de ganancia si ganan directo.</li>
       <li>Las apuestas y todos mis picks están en <a href="apuestas/">Apuestas NFL</a>.</li>
     </ul>
-    <p class="note">Underdogs semana pasada: Browns, Cowboys y Falcons → Ganaron (27-24, 34-30 y 45-24). Esto es una opinión, no una garantía. Momios de casas de apuestas al 8 oct 2026; revísalos en tu casa antes de jugar, pueden moverse. Si cambiamos un pick, lo actualizamos aquí antes de la patada.</p>
+    <p class="note">Resultados al 12 oct: Ravens ganaron (30-23 en tiempo extra); Browns (12-17) y Colts (22-34) perdieron. Falta el juego del lunes, Bills @ Rams. Underdogs semana pasada: Browns, Cowboys y Falcons → Ganaron (27-24, 34-30 y 45-24). Esto es una opinión, no una garantía. Momios de casas de apuestas al 8 oct 2026; revísalos en tu casa antes de jugar, pueden moverse. Si cambiamos un pick, lo actualizamos aquí antes de la patada.</p>
   </article>
 
   <aside class="explain">
@@ -226,20 +228,20 @@ footer strong{color:var(--warn)}
         <thead><tr><th>Visitante</th><th>Local</th><th>Línea del favorito</th><th>Tema</th></tr></thead>
         <tbody>
           <tr><td>Buccaneers</td><td><strong class="fav">Cowboys</strong> <span class="fav-badge">FAV</span></td><td class="num">DAL -8.5</td><td>Quarterbacks · Final: TB 24-16</td></tr>
-          <tr><td>Eagles</td><td><strong class="fav">Jaguars (Londres)</strong> <span class="fav-badge">FAV</span></td><td class="num">JAX -7</td><td>Lesiones</td></tr>
-          <tr><td><strong class="fav">Bears</strong> <span class="fav-badge">FAV</span></td><td>Packers</td><td class="num">CHI -1.5</td><td>Carrera</td></tr>
-          <tr><td><strong class="fav">Texans</strong> <span class="fav-badge">FAV</span></td><td>Titans</td><td class="num">HOU -7.5</td><td>Carrera</td></tr>
-          <tr><td><strong class="fav">Bengals</strong> <span class="fav-badge">FAV</span></td><td>Dolphins</td><td class="num">CIN -6.5</td><td>Lesiones</td></tr>
-          <tr><td>Raiders</td><td><strong class="fav">Patriots</strong> <span class="fav-badge">FAV</span></td><td class="num">NE -3.5</td><td>Lesiones</td></tr>
-          <tr><td><strong class="fav">Vikings</strong> <span class="fav-badge">FAV</span></td><td>Saints</td><td class="num">MIN -1.5</td><td>Carrera</td></tr>
-          <tr class="hl"><td>Browns <span class="dog-badge">Underdog FB</span></td><td><strong class="fav">Jets</strong> <span class="fav-badge">FAV</span></td><td class="num">NYJ -1.5</td><td>Underdog: CLE +110</td></tr>
-          <tr class="hl"><td>Colts <span class="dog-badge">Underdog FB</span></td><td><strong class="fav">Steelers</strong> <span class="fav-badge">FAV</span></td><td class="num">PIT -2.5</td><td>Underdog: IND +122</td></tr>
-          <tr><td>Giants</td><td><strong class="fav">Commanders</strong> <span class="fav-badge">FAV</span></td><td class="num">WSH -3.5</td><td>Quarterbacks</td></tr>
-          <tr><td><strong class="fav">Broncos</strong> <span class="fav-badge">FAV</span></td><td>Chargers</td><td class="num">DEN -3.5</td><td>Oeste</td></tr>
-          <tr><td><strong class="fav">Lions</strong> <span class="fav-badge">FAV</span></td><td>Cardinals</td><td class="num">DET -5.5</td><td>Oeste</td></tr>
-          <tr><td>49ers</td><td><strong class="fav">Seahawks</strong> <span class="fav-badge">FAV</span></td><td class="num">SEA -3</td><td>Oeste</td></tr>
-          <tr class="hl"><td>Ravens <span class="dog-badge">Underdog FB</span></td><td><strong class="fav">Falcons</strong> <span class="fav-badge">FAV</span></td><td class="num">ATL -3.5</td><td>Underdog: BAL +149</td></tr>
-          <tr><td>Bills</td><td><strong class="fav">Rams</strong> <span class="fav-badge">FAV</span></td><td class="num">LAR -3</td><td>Quarterbacks</td></tr>
+          <tr><td>Eagles</td><td><strong class="fav">Jaguars (Londres)</strong> <span class="fav-badge">FAV</span></td><td class="num">JAX -7</td><td>Lesiones · Final: JAX 19-17</td></tr>
+          <tr><td><strong class="fav">Bears</strong> <span class="fav-badge">FAV</span></td><td>Packers</td><td class="num">CHI -1.5</td><td>Carrera · Final: GB 31-7</td></tr>
+          <tr><td><strong class="fav">Texans</strong> <span class="fav-badge">FAV</span></td><td>Titans</td><td class="num">HOU -7.5</td><td>Carrera · Final: HOU 26-3</td></tr>
+          <tr><td><strong class="fav">Bengals</strong> <span class="fav-badge">FAV</span></td><td>Dolphins</td><td class="num">CIN -6.5</td><td>Lesiones · Final: CIN 31-24</td></tr>
+          <tr><td>Raiders</td><td><strong class="fav">Patriots</strong> <span class="fav-badge">FAV</span></td><td class="num">NE -3.5</td><td>Lesiones · Final: NE 45-17</td></tr>
+          <tr><td><strong class="fav">Vikings</strong> <span class="fav-badge">FAV</span></td><td>Saints</td><td class="num">MIN -1.5</td><td>Carrera · Final: MIN 23-13</td></tr>
+          <tr class="hl"><td>Browns <span class="dog-badge">Underdog FB</span></td><td><strong class="fav">Jets</strong> <span class="fav-badge">FAV</span></td><td class="num">NYJ -1.5</td><td>Underdog: CLE +110 <span class="lost-badge">PERDIÓ</span> NYJ 17-12</td></tr>
+          <tr class="hl"><td>Colts <span class="dog-badge">Underdog FB</span></td><td><strong class="fav">Steelers</strong> <span class="fav-badge">FAV</span></td><td class="num">PIT -2.5</td><td>Underdog: IND +122 <span class="lost-badge">PERDIÓ</span> PIT 34-22</td></tr>
+          <tr><td>Giants</td><td><strong class="fav">Commanders</strong> <span class="fav-badge">FAV</span></td><td class="num">WSH -3.5</td><td>Quarterbacks · Final: empate 27-27</td></tr>
+          <tr><td><strong class="fav">Broncos</strong> <span class="fav-badge">FAV</span></td><td>Chargers</td><td class="num">DEN -3.5</td><td>Oeste · Final: DEN 23-17</td></tr>
+          <tr><td><strong class="fav">Lions</strong> <span class="fav-badge">FAV</span></td><td>Cardinals</td><td class="num">DET -5.5</td><td>Oeste · Final: DET 45-21</td></tr>
+          <tr><td>49ers</td><td><strong class="fav">Seahawks</strong> <span class="fav-badge">FAV</span></td><td class="num">SEA -3</td><td>Oeste · Final: SF 32-29</td></tr>
+          <tr class="hl won"><td>Ravens <span class="dog-badge">Underdog FB</span></td><td><strong class="fav">Falcons</strong> <span class="fav-badge">FAV</span></td><td class="num">ATL -3.5</td><td>Underdog: BAL +149 <span class="won-badge">GANÓ</span> BAL 30-23 (tiempo extra)</td></tr>
+          <tr><td>Bills</td><td><strong class="fav">Rams</strong> <span class="fav-badge">FAV</span></td><td class="num">LAR -3</td><td>Quarterbacks · Pendiente (lunes)</td></tr>
         </tbody>
       </table>
     </div>
