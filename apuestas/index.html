@@ -166,6 +166,21 @@ footer strong{color:var(--warn)}
 .wv{display:inline-block;font-family:var(--f-mono);font-size:10.5px;padding:2px 6px;border-radius:3px;border:1px solid var(--line);color:var(--muted)}
 tr.against td{background:var(--gold-soft)}
 .empty{background:var(--paper);border:1px dashed var(--line);border-radius:6px;padding:16px;color:var(--muted)}
+.pay{font-family:var(--f-mono);font-weight:700;font-size:24px;font-variant-numeric:tabular-nums}
+.pay small{display:block;font-size:10.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.lvl{display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:3px;border:1px solid var(--line)}
+.lvl.alta{background:var(--gold-soft)}
+.det{font-size:13.5px;color:var(--muted)}
+.det summary{cursor:pointer;font-family:var(--f-mono);font-size:12px}
+.need{font-size:13px;color:var(--muted);margin:0}
+.tog{display:inline-flex;gap:6px;align-items:center;font-size:14px;margin:4px 0 10px;cursor:pointer}
+#picktbl .mlc{display:none}
+#picktbl.ml .mlc{display:table-cell}
+.glos summary{cursor:pointer;font-weight:700;font-size:18px}
+.glos dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 16px;margin:14px 0 0}
+.glos dt{font-weight:700}
+.glos dd{margin:0;color:var(--muted)}
+@media (max-width:560px){.glos dl{grid-template-columns:1fr}.glos dd{margin-bottom:6px}}
 </style>
 </head>
 <body>
@@ -184,26 +199,41 @@ tr.against td{background:var(--gold-soft)}
 
   <section class="theme" aria-labelledby="h-bets">
     <div class="eyebrow">Las jugadas</div>
-    <h2 id="h-bets">Apuestas</h2>
-    <p>Momio de referencia; confírmalo en tu casa antes de jugar.</p>
+    <h2 id="h-bets">Nuestras jugadas de la semana</h2>
+    <p>Cada tarjeta dice qué tiene que pasar para ganar y cuánto te tocaría si apuestas $100. Los números técnicos están en "Ver detalle".</p>
     <div class="tickets" id="tickets"></div>
     <p class="note" id="betsnote" hidden></p>
   </section>
 
   <section class="theme" aria-labelledby="h-dogs">
-    <div class="eyebrow">Contra Vegas</div>
-    <h2 id="h-dogs">Nuestros underdogs</h2>
+    <div class="eyebrow">Contra el favorito</div>
+    <h2 id="h-dogs">Pueden dar la sorpresa</h2>
+    <p>Equipos que no son favoritos, pero creemos que pueden ganar. Por eso pagan más.</p>
     <div class="tickets" id="dogs"></div>
   </section>
 
   <section class="theme" aria-labelledby="h-picks">
     <div class="eyebrow">Juego por juego</div>
     <h2 id="h-picks">Mis picks de la semana</h2>
-    <p>Del jueves al lunes, hora Cancún. Probabilidad de Vegas = moneyline del mercado sin la comisión de la casa. <strong id="record"></strong></p>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>Juego</th><th>Hora</th><th>Mi pick</th><th>Favorito de Vegas</th><th>Moneyline (visita / local)</th><th></th><th>Resultado</th></tr></thead>
+    <p>Quién creo que gana cada partido, del jueves al lunes (hora Cancún). "6 de 10" = cuántas veces de cada 10 ganaría el favorito. <strong id="record"></strong></p>
+    <label class="tog"><input type="checkbox" id="showml"> Mostrar momios</label>
+    <div class="tbl-wrap"><table id="picktbl">
+      <thead><tr><th>Partido</th><th>Cuándo</th><th>Mi pick</th><th>Favorito</th><th class="mlc">Momios (visita / local)</th><th></th><th>Resultado</th></tr></thead>
       <tbody id="rows"></tbody>
     </table></div>
+  </section>
+
+  <section class="theme" aria-labelledby="h-glos">
+    <details class="glos"><summary id="h-glos">¿Nuevo en apuestas? 6 palabras para entender esta página</summary>
+      <dl>
+        <dt>Favorito</dt><dd>El equipo que las casas de apuestas creen que va a ganar. Paga menos porque es más probable.</dd>
+        <dt>Sorpresa</dt><dd>Ganar con el equipo que no era favorito. Paga más porque es menos probable. En inglés le dicen "underdog".</dd>
+        <dt>Momio</dt><dd>El número que dice cuánto paga una apuesta. Con <b>+125</b>, $100 ganan $125. Con <b>−200</b>, hay que apostar $200 para ganar $100 (o sea, $100 ganan $50).</dd>
+        <dt>Ganar directo</dt><dd>Apostar solo a que un equipo gana el partido, sin importar por cuánto. En inglés: "moneyline" o "ML".</dd>
+        <dt>Combinada</dt><dd>Varias apuestas en un solo boleto; tienen que pegar todas. Paga más, pero es más difícil. En inglés: "parlay".</dd>
+        <dt>Combo de un partido</dt><dd>Una combinada con varias cosas del mismo partido (puntos, jugadas de un jugador). En las casas se llama "Bet Builder".</dd>
+      </dl>
+    </details>
   </section>
 
   <footer>
@@ -221,16 +251,16 @@ const DATA = {
   weeks: {
     6: {
       stamp: "Semana 6 · actualizado jue 15 oct 2026",
-      lede: "Dos underdogs para la semana: los Giants en casa contra Nueva Orleans, en un partido que las casas ven casi parejo, y los Broncos el jueves contra Seattle. Las jugadas: Giants a ganar, un Bet Builder del jueves en Denver y un parlay de dos favoritos (Chiefs y 49ers).",
+      lede: "Esta semana creemos que pueden dar la sorpresa los Broncos (jueves, contra Seattle) y los Giants (domingo, contra Nueva Orleans). Nuestras 3 jugadas: los Giants a ganar, un combo del jueves en Denver y una combinada con Chiefs y 49ers.",
       src: "Momios tomados de casas de apuestas (15 oct 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"Giants ML", legs:["Giants ganan vs. Saints · NO @ NYG"], odds:"-105", prob:"Vegas: 49.3%", when:"dom 12:00p", why:"Nuestro underdog por números. Nueva Orleans es favorito por apenas 1.5 puntos; los Giants tienen ventaja en equipos especiales y Cam Skattebo enfrenta una defensa débil contra la carrera. $100 ganarían unos $95." }
-        ,{ kind:"Apuesta 2", title:"Bet Builder Broncos", legs:["Broncos anotan más de 16.5 puntos (−209) · SEA @ DEN","Sam Darnold lanza al menos una intercepción (más de 0.5, −137)","Menos de 47.5 puntos en el partido (−289)"], odds:"+230", prob:"Implícita: 30.3%", when:"jue 7:15p", why:"Partido parejo entre dos equipos 3-2, donde la clave es si Seattle cuida el balón. Las tres patas tienen que pegar. $100 ganarían $230." }
-        ,{ kind:"Parlay", title:"Chiefs ML + 49ers ML", legs:["Chiefs ganan vs. Chargers (−435) · LAC @ KC","49ers ganan vs. Commanders (−400) · WSH @ SF"], odds:"-186", prob:"2 juegos · aprox.", when:"dom 3:25p / lun 7:15p", why:"Dos favoritos claros con mis picks. Momio aproximado multiplicando las dos patas; $100 ganarían unos $54." }
+        { kind:"Apuesta 1", title:"Giants ganan", legs:["Los Giants le ganan a los Saints (domingo)"], odds:"-105", prob:"Vegas: 49.3%", when:"dom 12:00p", why:"Nuestra sorpresa de la semana. Es casi un volado: los Giants patean mejor y Cam Skattebo enfrenta una defensa que sufre para frenar la carrera." }
+        ,{ kind:"Apuesta 2", title:"Combo del jueves en Denver", legs:["Los Broncos anotan 17 puntos o más","Sam Darnold (Seattle) lanza al menos una intercepción","Entre los dos equipos hacen 47 puntos o menos"], odds:"+230", prob:"Implícita: 30.3%", when:"jue 7:15p", why:"Esperamos un partido cerrado y de pocos puntos, donde la clave es si Seattle cuida el balón. Paga mucho porque tienen que pasar las tres cosas." }
+        ,{ kind:"Parlay", title:"Chiefs y 49ers ganan", legs:["Los Chiefs le ganan a los Chargers (domingo)","Los 49ers le ganan a los Commanders (lunes)"], odds:"-186", prob:"2 juegos · aprox.", when:"dom 3:25p / lun 7:15p", why:"Dos favoritos claros juntos en un boleto para que paguen más que por separado. Tienen que ganar los dos. Pago aproximado." }
       ],
       dogs: [
-        { label:"Underdog por números", team:"Giants", code:"NYG", game:"NO @ NYG", when:"dom 12:00p", ml:"-105", pct:49.3, favTeam:"NO", favPct:50.7, text:"Casi un volado: Saints favoritos por 1.5 puntos. Nueva York tiene más formas de ganar: carrera, cobertura y equipos especiales." },
-        { label:"Underdog premium", team:"Broncos", code:"DEN", game:"SEA @ DEN", when:"jue 7:15p", ml:"+125", pct:43.0, favTeam:"SEA", favPct:57.0, text:"Dos equipos 3-2 casi iguales en los números. En casa y en semana corta; la clave es si Seattle cuida el balón." }
+        { label:"Underdog por números", team:"Giants", code:"NYG", game:"NO @ NYG", when:"dom 12:00p", ml:"-105", pct:49.3, favTeam:"NO", favPct:50.7, text:"Casi un volado. Nueva York tiene más formas de ganar: corriendo, defendiendo el pase y en equipos especiales." },
+        { label:"Underdog premium", team:"Broncos", code:"DEN", game:"SEA @ DEN", when:"jue 7:15p", ml:"+125", pct:43.0, favTeam:"SEA", favPct:57.0, text:"Dos equipos casi iguales. Denver juega en casa y la clave es si Seattle cuida el balón." }
       ],
       games: [
         {g:"SEA @ DEN", t:"jue 7:15p", ml:["-139","+128"], fav:"SEA", pct:57.0, pick:"SEA"},
@@ -327,43 +357,52 @@ function nav(active){
     b.setAttribute("aria-current", k===active?"true":"false"); b.addEventListener("click",()=>show(k)); n.appendChild(b);
   });
 }
-function legHtml(l){const m=/^(.*) · (ganó|perdió) (.*)$/.exec(l);if(!m)return esc(l);return esc(m[1])+(m[2]==='ganó'?' <span class="won-badge">GANÓ</span> ':' <span class="lost-badge">PERDIÓ</span> ')+esc(m[3])}
+const plain=t=>String(t??"").replace(/\bML\b/g,"a ganar").replace(/Underdog por números y mío/g,"Sorpresa de la semana").replace(/Underdog por números/g,"Sorpresa de la semana").replace(/Underdog premium/g,"Otra sorpresa").replace(/Mi underdog/g,"Mi sorpresa").replace(/underdogs?/gi,"sorpresa").replace(/^Apuesta (\d)/,"Jugada $1").replace(/^Parlay$/,"Combinada").replace(/Bet Builder/g,"Combo de un partido").replace(/\bparlay\b/gi,"combinada");
+const num=o=>parseInt(String(o).replace("−","-"),10);
+function payout(o){const n=num(o);if(!n)return null;return n>0?n:Math.round(10000/-n);}
+function impl(o){const n=num(o);if(!n)return null;return n>0?100/(n+100):-n/(-n+100);}
+function chance(p){if(p==null)return "";const k=Math.max(1,Math.min(9,Math.round(p*10)));const l=p>=0.55?["alta","Alta"]:p>=0.35?["media","Media"]:["baja","Baja"];return `<span class="lvl ${l[0]}">Posibilidad ${l[1]} · ${k} de 10</span>`;}
+function legHtml(l){l=plain(l);const m=/^(.*) · (ganó|perdió) (.*)$/.exec(l);if(!m)return esc(l);return esc(m[1])+(m[2]==='ganó'?' <span class="won-badge">GANÓ</span> ':' <span class="lost-badge">PERDIÓ</span> ')+esc(m[3])}
 function resHtml(x,a,h){
-  if(!x.r) return '<span class="wv">Pendiente</span>';
+  if(!x.r) return '<span class="wv">Por jugar</span>';
   if(x.r[0]===x.r[1]) return `<span class="res">${esc(a)} ${x.r[0]}-${x.r[1]} ${esc(h)}</span> <span class="wv">EMPATE</span>`;
   const win=x.r[0]>x.r[1]?a:h, hit=x.pick===win;
   return `<span class="res">${esc(a)} ${x.r[0]}-${x.r[1]} ${esc(h)}</span> `+(hit?'<span class="won-badge">ACERTÉ</span>':'<span class="lost-badge">FALLÉ</span>');
 }
-function record(w){let g=0,p=0,t=0;w.games.forEach(x=>{if(!x.r||!x.pick)return;const [a,h]=x.g.split(/ @ | vs /);if(x.r[0]===x.r[1]){t++;return;}(x.pick===(x.r[0]>x.r[1]?a:h))?g++:p++;});return g+p+t?`Mis picks: ${g}-${p}`+(t?`-${t}`:""):"";}
+function favWord(p){return p>=75?"Muy claro":p>=65?"Claro":p>=55?"Poco":"Casi parejo";}
+function record(w){let g=0,p=0,t=0;w.games.forEach(x=>{if(!x.r||!x.pick)return;const [a,h]=x.g.split(/ @ | vs /);if(x.r[0]===x.r[1]){t++;return;}(x.pick===(x.r[0]>x.r[1]?a:h))?g++:p++;});return g+p+t?`Mis picks: ${g} aciertos, ${p} fallos`+(t?`, ${t} empate`:""):"";}
 function show(k){
   const w=DATA.weeks[k]; nav(k);
-  $("#stamp").textContent=w.stamp||""; $("#record").textContent=record(w); $("#lede").textContent=w.lede||""; $("#src").textContent=w.src||"";
-  $("#tickets").innerHTML=(w.bets&&w.bets.length)?w.bets.map(b=>`
+  $("#stamp").textContent=w.stamp||""; $("#record").textContent=record(w); $("#lede").textContent=plain(w.lede||""); $("#src").textContent=w.src||"";
+  $("#tickets").innerHTML=(w.bets&&w.bets.length)?w.bets.map(b=>{const pay=payout(b.odds);const legs=b.legs.length;return `
     <article class="ticket ${b.kind==='Parlay'?'parlay':''}${b.won?' won':''}${b.lost?' lost':''}">
-      <div class="tt"><span style="display:flex;gap:8px;align-items:center"><span class="kind">${esc(b.kind)}</span>${b.won?'<span class="won-badge">GANÓ</span>':b.lost?'<span class="lost-badge">PERDIÓ</span>':''}</span><span class="eyebrow">${esc(b.prob)}</span></div>
-      <div class="tb"><h3>${esc(b.title)}</h3><ul class="legs">${b.legs.map(l=>`<li>${legHtml(l)}</li>`).join("")}</ul><p class="why">${esc(b.why)}</p></div>
-      <div class="tf"><div class="odds">${esc(b.odds)}<small>Momio</small></div><div class="when">${esc(b.when)}</div></div>
-    </article>`).join(""):`<div class="empty">Las jugadas de esta semana salen pronto.</div>`;
-  const bn=$("#betsnote"); bn.textContent=w.note||""; bn.hidden=!w.note;
+      <div class="tt"><span style="display:flex;gap:8px;align-items:center"><span class="kind">${esc(plain(b.kind))}</span>${b.won?'<span class="won-badge">GANÓ</span>':b.lost?'<span class="lost-badge">PERDIÓ</span>':''}</span><span class="eyebrow">${esc(b.when)}</span></div>
+      <div class="tb"><h3>${esc(plain(b.title))}</h3><p class="need">${legs>1?`Tienen que pasar las ${legs} cosas:`:"Tiene que pasar:"}</p><ul class="legs">${b.legs.map(l=>`<li>${legHtml(l)}</li>`).join("")}</ul><p class="why">${esc(plain(b.why))}</p>
+        <details class="det"><summary>Ver detalle</summary>Momio ${esc(b.odds)} · ${esc(b.prob)}</details></div>
+      <div class="tf"><div class="pay">${pay!=null?"$"+pay:"—"}<small>Ganas si apuestas $100</small></div><div class="when">${chance(impl(b.odds))}</div></div>
+    </article>`}).join(""):`<div class="empty">Las jugadas de esta semana salen pronto.</div>`;
+  const bn=$("#betsnote"); bn.textContent=plain(w.note||""); bn.hidden=!w.note;
   const D=w.dogs||[];
-  $("#dogs").innerHTML=D.length?D.map(d=>`
+  $("#dogs").innerHTML=D.length?D.map(d=>{const pay=payout(d.ml);const k=Math.round(d.pct/10);return `
     <article class="ticket${d.won?' won':''}${d.lost?' lost':''}">
-      <div class="tt"><span style="display:flex;gap:8px;align-items:center"><span class="kind">${esc(d.label)}</span>${d.won?'<span class="won-badge">GANÓ</span>':d.lost?'<span class="lost-badge">PERDIÓ</span>':''}</span><span class="eyebrow">${esc(d.game)} · ${esc(d.when)}</span></div>
-      <div class="tb"><h3>${esc(d.team)} ${esc(d.ml)}</h3><p>${esc(d.text)}</p>
-        <div class="meter"><span class="eyebrow">Probabilidad según Vegas</span>
-          <div class="bar" role="img" aria-label="${esc(d.code)} ${d.pct}% contra ${esc(d.favTeam)} ${d.favPct}%"><i style="width:${d.pct}%;background:var(--gold)"></i><i style="width:${d.favPct}%;background:var(--muted);opacity:.4"></i></div>
-          <div class="mrow"><span>${esc(d.code)} ${d.pct}%</span><span>${esc(d.favTeam)} ${d.favPct}%</span></div></div></div>
-      <div class="tf"><div class="odds">${esc(d.ml)}<small>$100 ganan $${(n=>n>0?n:(n<0?Math.round(10000/-n):0))(parseInt(d.ml)||0)}</small></div></div>
-    </article>`).join(""):`<div class="empty">Esta semana vamos con todos los favoritos.</div>`;
+      <div class="tt"><span style="display:flex;gap:8px;align-items:center"><span class="kind">${esc(plain(d.label))}</span>${d.won?'<span class="won-badge">GANÓ</span>':d.lost?'<span class="lost-badge">PERDIÓ</span>':''}</span><span class="eyebrow">${esc(d.game)} · ${esc(d.when)}</span></div>
+      <div class="tb"><h3>${esc(d.team)}</h3><p>${esc(plain(d.text))}</p>
+        <div class="meter"><span class="eyebrow">Posibilidad de ganar: ${k} de 10</span>
+          <div class="bar" role="img" aria-label="${esc(d.code)} ${k} de 10 contra ${esc(d.favTeam)} ${10-k} de 10"><i style="width:${d.pct}%;background:var(--gold)"></i><i style="width:${d.favPct}%;background:var(--muted);opacity:.4"></i></div>
+          <div class="mrow"><span>${esc(d.code)} ${k} de 10</span><span>${esc(d.favTeam)} ${10-k} de 10</span></div></div>
+        <details class="det"><summary>Ver detalle</summary>Momio ${esc(d.ml)} · probabilidad ${d.pct}% contra ${d.favPct}% de ${esc(d.favTeam)}</details></div>
+      <div class="tf"><div class="pay">${pay!=null?"$"+pay:"—"}<small>Ganas si apuestas $100 y gana</small></div></div>
+    </article>`}).join(""):`<div class="empty">Esta semana vamos con todos los favoritos.</div>`;
   $("#rows").innerHTML=w.games.map(x=>{
     const against=!!x.pick && x.pick!==x.fav; const [a,h]=x.g.split(/ @ | vs /);
-    return `<tr class="${against?'against':''}"><td><strong>${esc(x.g)}</strong></td><td class="num">${esc(x.t)}</td>
-      <td class="pk">${esc(x.pick||'Pendiente')}</td><td class="num">${esc(x.fav)} ${x.pct.toFixed(1)}%</td>
-      <td class="num">${esc(a)} <b>${esc(x.ml[0])}</b> / ${esc(h)} <b>${esc(x.ml[1])}</b></td>
-      <td>${!x.pick?'':against?'<span class="vs">Contra Vegas</span>':'<span class="wv">Con Vegas</span>'}</td>
+    return `<tr class="${against?'against':''}"><td><strong>${esc(x.g.replace(" @ "," en "))}</strong></td><td class="num">${esc(x.t)}</td>
+      <td class="pk">${esc(x.pick||'Pendiente')}</td><td style="white-space:nowrap">${esc(x.fav)} · ${Math.round(x.pct/10)} de 10</td>
+      <td class="num mlc">${esc(a)} <b>${esc(x.ml[0])}</b> / ${esc(h)} <b>${esc(x.ml[1])}</b></td>
+      <td>${!x.pick?'':against?'<span class="vs">Voy con la sorpresa</span>':'<span class="wv">Voy con el favorito</span>'}</td>
       <td>${resHtml(x,a,h)}</td></tr>`;
   }).join("");
 }
+document.getElementById("showml").addEventListener("change",e=>document.getElementById("picktbl").classList.toggle("ml",e.target.checked));
 let start=DATA.current; const hh=(location.hash||"").replace("#","");
 if(/^s\d+$/.test(hh)&&DATA.weeks[+hh.slice(1)]) start=+hh.slice(1);
 show(start);
