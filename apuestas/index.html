@@ -217,8 +217,38 @@ tr.against td{background:var(--gold-soft)}
    ml = [visita, local] · pick = mi pick · fav/pct = favorito de Vegas y % sin vig · r = [puntos visita, puntos local] cuando termina
    dogs = lista de underdogs (label, team, code, game, when, ml, pct, favTeam, favPct, text) */
 const DATA = {
-  current: 5,
+  current: 6,
   weeks: {
+    6: {
+      stamp: "Semana 6 · actualizado jue 15 oct 2026",
+      lede: "Dos underdogs para la semana: los Giants en casa contra Nueva Orleans, en un partido que las casas ven casi parejo, y los Broncos el jueves contra Seattle. Las jugadas: Giants a ganar, un Bet Builder del jueves en Denver y un parlay de dos favoritos (Chiefs y 49ers).",
+      src: "Momios tomados de casas de apuestas (15 oct 2026). Análisis y opiniones: FlippBetBlog.",
+      bets: [
+        { kind:"Apuesta 1", title:"Giants ML", legs:["Giants ganan vs. Saints · NO @ NYG"], odds:"-105", prob:"Vegas: 49.3%", when:"dom 12:00p", why:"Nuestro underdog por números. Nueva Orleans es favorito por apenas 1.5 puntos; los Giants tienen ventaja en equipos especiales y Cam Skattebo enfrenta una defensa débil contra la carrera. $100 ganarían unos $95." }
+        ,{ kind:"Apuesta 2", title:"Bet Builder Broncos", legs:["Broncos anotan más de 16.5 puntos (−209) · SEA @ DEN","Sam Darnold lanza al menos una intercepción (más de 0.5, −137)","Menos de 47.5 puntos en el partido (−289)"], odds:"+230", prob:"Implícita: 30.3%", when:"jue 7:15p", why:"Partido parejo entre dos equipos 3-2, donde la clave es si Seattle cuida el balón. Las tres patas tienen que pegar. $100 ganarían $230." }
+        ,{ kind:"Parlay", title:"Chiefs ML + 49ers ML", legs:["Chiefs ganan vs. Chargers (−435) · LAC @ KC","49ers ganan vs. Commanders (−400) · WSH @ SF"], odds:"-186", prob:"2 juegos · aprox.", when:"dom 3:25p / lun 7:15p", why:"Dos favoritos claros con mis picks. Momio aproximado multiplicando las dos patas; $100 ganarían unos $54." }
+      ],
+      dogs: [
+        { label:"Underdog por números", team:"Giants", code:"NYG", game:"NO @ NYG", when:"dom 12:00p", ml:"-105", pct:49.3, favTeam:"NO", favPct:50.7, text:"Casi un volado: Saints favoritos por 1.5 puntos. Nueva York tiene más formas de ganar: carrera, cobertura y equipos especiales." },
+        { label:"Underdog premium", team:"Broncos", code:"DEN", game:"SEA @ DEN", when:"jue 7:15p", ml:"+125", pct:43.0, favTeam:"SEA", favPct:57.0, text:"Dos equipos 3-2 casi iguales en los números. En casa y en semana corta; la clave es si Seattle cuida el balón." }
+      ],
+      games: [
+        {g:"SEA @ DEN", t:"jue 7:15p", ml:["-139","+128"], fav:"SEA", pct:57.0, pick:"SEA"},
+        {g:"HOU @ JAX", t:"dom 8:30a", ml:["+123","-143"], fav:"JAX", pct:56.8, pick:"JAX"},
+        {g:"CHI @ ATL", t:"dom 12:00p", ml:["-116","-101"], fav:"CHI", pct:51.7, pick:"CHI"},
+        {g:"BAL @ CLE", t:"dom 12:00p", ml:["-238","+200"], fav:"BAL", pct:67.9, pick:"BAL"},
+        {g:"TEN @ IND", t:"dom 12:00p", ml:["+270","-333"], fav:"IND", pct:74.0, pick:"IND"},
+        {g:"NYJ @ NE", t:"dom 12:00p", ml:["+280","-345"], fav:"NE", pct:74.7, pick:"NE"},
+        {g:"NO @ NYG", t:"dom 12:00p", ml:["-111","-105"], fav:"NO", pct:50.7, pick:"NYG"},
+        {g:"CAR @ PHI", t:"dom 12:00p", ml:["-112","-104"], fav:"CAR", pct:50.9, pick:"CAR"},
+        {g:"PIT @ TB", t:"dom 12:00p", ml:["-141","+120"], fav:"PIT", pct:56.3, pick:"PIT"},
+        {g:"ARI @ LAR", t:"dom 3:05p", ml:["+600","-833"], fav:"LAR", pct:86.2, pick:"LAR"},
+        {g:"LAC @ KC", t:"dom 3:25p", ml:["+355","-435"], fav:"KC", pct:78.7, pick:"KC"},
+        {g:"BUF @ LV", t:"dom 3:25p", ml:["-244","+205"], fav:"BUF", pct:68.4, pick:"BUF"},
+        {g:"DAL @ GB", t:"dom 7:20p", ml:["+101","-119"], fav:"GB", pct:52.2, pick:"GB"},
+        {g:"WSH @ SF", t:"lun 7:15p", ml:["+330","-400"], fav:"SF", pct:77.5, pick:"SF"}
+      ]
+    },
     5: {
       stamp: "Semana 5 · resultados finales al lun 12 oct 2026",
       lede: "Las dos del jueves pegaron (Irving TD y Bet Builder de Tampa Bay). El domingo no nos acompañó: Hurts no anotó y Raiders y Jets se quedaron en 17 puntos cada uno. De los underdogs, Baltimore ganó en tiempo extra (30-23); Cleveland e Indianapolis perdieron. Mis picks cerraron la semana 9-5-1 (Buffalo ganó en Los Ángeles 37-34 en tiempo extra).",
@@ -323,7 +353,7 @@ function show(k){
         <div class="meter"><span class="eyebrow">Probabilidad según Vegas</span>
           <div class="bar" role="img" aria-label="${esc(d.code)} ${d.pct}% contra ${esc(d.favTeam)} ${d.favPct}%"><i style="width:${d.pct}%;background:var(--gold)"></i><i style="width:${d.favPct}%;background:var(--muted);opacity:.4"></i></div>
           <div class="mrow"><span>${esc(d.code)} ${d.pct}%</span><span>${esc(d.favTeam)} ${d.favPct}%</span></div></div></div>
-      <div class="tf"><div class="odds">${esc(d.ml)}<small>$100 ganan $${parseInt(d.ml)||0}</small></div></div>
+      <div class="tf"><div class="odds">${esc(d.ml)}<small>$100 ganan $${(n=>n>0?n:(n<0?Math.round(10000/-n):0))(parseInt(d.ml)||0)}</small></div></div>
     </article>`).join(""):`<div class="empty">Esta semana vamos con todos los favoritos.</div>`;
   $("#rows").innerHTML=w.games.map(x=>{
     const against=!!x.pick && x.pick!==x.fav; const [a,h]=x.g.split(/ @ | vs /);
