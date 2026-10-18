@@ -96,7 +96,7 @@ SEMANAS = {
     6: dict(jueves="Jueves: ganó el combo de Denver",
             b3=("APUESTA 3 · DOM 3:05P", "Puka Nacua y Jeanty anotan TD", "+177", "Un TD de cada uno · Rams y Raiders", 42),
             b4=("APUESTA 4 · DOM 12:00P", "Titans y Eagles, 2+ TDs", "+132", "Cada equipo anota 2 touchdowns o más", 46),
-            extra="+ Giants, Chiefs y 49ers y los picks de 14 juegos"),
+            extra="+ Giants, Chiefs, 49ers y la sorpresa Cowboys"),
 }
 
 def story(ig):
