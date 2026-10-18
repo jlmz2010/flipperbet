@@ -250,32 +250,32 @@ const DATA = {
   current: 6,
   weeks: {
     6: {
-      stamp: "Semana 6 · actualizado sáb 17 oct 2026",
-      lede: "El jueves pegó: los Broncos dieron la sorpresa 17-14 en tiempo extra y el combo de Denver ganó completo. Para el domingo siguen los Giants a ganar y la combinada de Chiefs y 49ers, y sumamos dos apuestas nuevas: touchdowns de Puka Nacua y Ashton Jeanty, y Titans y Eagles con 2 touchdowns o más. Nueva sorpresa: los Cowboys en Green Bay (domingo en la noche), y dos combinadas: Bears y Cowboys, y Giants y Bears.",
+      stamp: "Semana 6 · actualizado dom 18 oct 2026",
+      lede: "Buen domingo a mediodía: pegó la apuesta de Titans y Eagles con 2 touchdowns cada uno, y los Bears ganaron, así que la combinada con los Cowboys sigue viva para la noche. Los Giants no pudieron con los Saints. Faltan los juegos de la tarde y de la noche.",
       src: "Momios tomados de casas de apuestas (15 oct 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"Giants ganan", legs:["Los Giants le ganan a los Saints (domingo)"], odds:"-105", prob:"Vegas: 49.3%", when:"dom 12:00p", why:"Nuestra sorpresa de la semana. Es casi un volado: los Giants patean mejor y Cam Skattebo enfrenta una defensa que sufre para frenar la carrera." }
+        { kind:"Apuesta 1", lost:true, title:"Giants ganan", legs:["Los Giants le ganan a los Saints (domingo) · perdió (Saints 34, Giants 27)"], odds:"-105", prob:"Vegas: 49.3%", when:"dom 12:00p", why:"Perdió: Saints 34, Giants 27. Nueva York se acercó al final, pero no le alcanzó." }
         ,{ kind:"Apuesta 2", won:true, title:"Combo del jueves en Denver", legs:["Los Broncos anotan 17 puntos o más · ganó (anotaron 17, con el gol de campo del tiempo extra)","Sam Darnold (Seattle) lanza al menos una intercepción · ganó (lanzó 2)","Entre los dos equipos hacen 47 puntos o menos · ganó (hicieron 31)"], odds:"+230", prob:"Implícita: 30.3%", when:"jue 7:15p", why:"Ganó: Denver 17, Seattle 14 en tiempo extra. Darnold lanzó dos intercepciones y el partido fue de pocos puntos. $100 cobraron $230 de ganancia." }
         ,{ kind:"Parlay", title:"Chiefs y 49ers ganan", legs:["Los Chiefs le ganan a los Chargers (domingo)","Los 49ers le ganan a los Commanders (lunes)"], odds:"-186", prob:"2 juegos · aprox.", when:"dom 3:25p / lun 7:15p", why:"Dos favoritos claros juntos en un boleto para que paguen más que por separado. Tienen que ganar los dos. Pago aproximado." }
         ,{ kind:"Apuesta 3", title:"Puka Nacua y Ashton Jeanty anotan TD", legs:["Puka Nacua (Rams) anota touchdown en cualquier momento (−169) · ARI @ LAR","Ashton Jeanty (Raiders) anota touchdown en cualquier momento (−135) · BUF @ LV"], odds:"+177", prob:"Implícita: 36.1%", when:"dom 3:05p / 3:25p", why:"Dos jugadores, cada uno tiene que anotar en su partido. No depende de quién gane. $100 cobran $177 de ganancia." }
-        ,{ kind:"Apuesta 4", title:"Titans y Eagles, 2 touchdowns o más", legs:["Titans anotan 2 touchdowns o más (−208) · TEN @ IND","Eagles anotan 2 touchdowns o más (−175) · CAR @ PHI"], odds:"+132", prob:"Implícita: 43.1%", when:"dom 12:00p", why:"Dos equipos, cada uno tiene que anotar al menos 2 touchdowns. Filadelfia juega con Tanner McKee de quarterback. $100 cobran $132 de ganancia." }
-        ,{ kind:"Apuesta 5", title:"Bears y Cowboys ganan", legs:["Los Bears le ganan a los Falcons (−116) · CHI @ ATL","Los Cowboys le ganan a los Packers (+101) · DAL @ GB"], odds:"+274", prob:"2 juegos · aprox.", when:"dom 12:00p / 7:20p", why:"Combinada de dos partidos casi parejos: los Bears, nuestro pick en Atlanta, y los Cowboys, nuestra sorpresa en Green Bay. Tienen que ganar los dos. Pago aproximado con momios del 15 oct." }
-        ,{ kind:"Apuesta 6", title:"Giants y Bears ganan", legs:["Los Giants le ganan a los Saints (−105) · NO @ NYG","Los Bears le ganan a los Falcons (−116) · CHI @ ATL"], odds:"+264", prob:"2 juegos · aprox.", when:"dom 12:00p", why:"Combinada de dos partidos casi parejos a la misma hora: los Giants, nuestra sorpresa de la semana, y los Bears, nuestro pick en Atlanta. Tienen que ganar los dos. Pago aproximado con momios del 15 oct." }
+        ,{ kind:"Apuesta 4", won:true, title:"Titans y Eagles, 2 touchdowns o más", legs:["Titans anotan 2 touchdowns o más (−208) · TEN @ IND · ganó (anotaron 2: pase a Carnell Tate y regreso de despeje bloqueado)","Eagles anotan 2 touchdowns o más (−175) · CAR @ PHI · ganó (anotaron 2: carrera de Dameon Pierce y pase a DeVonta Smith)"], odds:"+132", prob:"Implícita: 43.1%", when:"dom 12:00p", why:"Ganó: Titans 26, Colts 20 y Panthers 25, Eagles 14. Cada equipo anotó sus 2 touchdowns. $100 cobraron $132 de ganancia." }
+        ,{ kind:"Apuesta 5", title:"Bears y Cowboys ganan", legs:["Los Bears le ganan a los Falcons (−116) · CHI @ ATL · ganó (Bears 31, Falcons 23)","Los Cowboys le ganan a los Packers (+101) · DAL @ GB"], odds:"+274", prob:"2 juegos · aprox.", when:"dom 12:00p / 7:20p", why:"Combinada de dos partidos casi parejos: los Bears, nuestro pick en Atlanta, y los Cowboys, nuestra sorpresa en Green Bay. Tienen que ganar los dos. Pago aproximado con momios del 15 oct." }
+        ,{ kind:"Apuesta 6", lost:true, title:"Giants y Bears ganan", legs:["Los Giants le ganan a los Saints (−105) · NO @ NYG · perdió (Saints 34, Giants 27)","Los Bears le ganan a los Falcons (−116) · CHI @ ATL · ganó (Bears 31, Falcons 23)"], odds:"+264", prob:"2 juegos · aprox.", when:"dom 12:00p", why:"Perdió: Saints 34, Giants 27. Los Bears sí ganaron 31-23, pero tenían que pegar las dos." }
       ],
       dogs: [
-        { label:"Underdog por números", team:"Giants", code:"NYG", game:"NO @ NYG", when:"dom 12:00p", ml:"-105", pct:49.3, favTeam:"NO", favPct:50.7, text:"Casi un volado. Nueva York tiene más formas de ganar: corriendo, defendiendo el pase y en equipos especiales." },
+        { label:"Underdog por números", lost:true, team:"Giants", code:"NYG", game:"NO @ NYG", when:"dom 12:00p", ml:"-105", pct:49.3, favTeam:"NO", favPct:50.7, text:"Perdió: Saints 34, Giants 27." },
         { label:"Underdog premium", won:true, team:"Broncos", code:"DEN", game:"SEA @ DEN", when:"jue 7:15p", ml:"+125", pct:43.0, favTeam:"SEA", favPct:57.0, text:"Ganó: Denver 17, Seattle 14 (tiempo extra)." },
         { label:"Mi underdog", team:"Cowboys", code:"DAL", game:"DAL @ GB", when:"dom 7:20p", ml:"+101", pct:47.8, favTeam:"GB", favPct:52.2, text:"Casi parejo. Los dos lanzan largo y los dos sufren para defender el pase; Green Bay solo tiene a favor la localía." }
       ],
       games: [
         {g:"SEA @ DEN", t:"jue 7:15p", ml:["-139","+128"], fav:"SEA", pct:57.0, pick:"SEA", r:[14,17]},
-        {g:"HOU @ JAX", t:"dom 8:30a", ml:["+123","-143"], fav:"JAX", pct:56.8, pick:"JAX"},
-        {g:"CHI @ ATL", t:"dom 12:00p", ml:["-116","-101"], fav:"CHI", pct:51.7, pick:"CHI"},
-        {g:"BAL @ CLE", t:"dom 12:00p", ml:["-238","+200"], fav:"BAL", pct:67.9, pick:"BAL"},
-        {g:"TEN @ IND", t:"dom 12:00p", ml:["+270","-333"], fav:"IND", pct:74.0, pick:"IND"},
-        {g:"NYJ @ NE", t:"dom 12:00p", ml:["+280","-345"], fav:"NE", pct:74.7, pick:"NE"},
-        {g:"NO @ NYG", t:"dom 12:00p", ml:["-111","-105"], fav:"NO", pct:50.7, pick:"NYG"},
-        {g:"CAR @ PHI", t:"dom 12:00p", ml:["-112","-104"], fav:"CAR", pct:50.9, pick:"CAR"},
+        {g:"HOU @ JAX", t:"dom 8:30a", ml:["+123","-143"], fav:"JAX", pct:56.8, pick:"JAX", r:[34,31]},
+        {g:"CHI @ ATL", t:"dom 12:00p", ml:["-116","-101"], fav:"CHI", pct:51.7, pick:"CHI", r:[31,23]},
+        {g:"BAL @ CLE", t:"dom 12:00p", ml:["-238","+200"], fav:"BAL", pct:67.9, pick:"BAL", r:[10,13]},
+        {g:"TEN @ IND", t:"dom 12:00p", ml:["+270","-333"], fav:"IND", pct:74.0, pick:"IND", r:[26,20]},
+        {g:"NYJ @ NE", t:"dom 12:00p", ml:["+280","-345"], fav:"NE", pct:74.7, pick:"NE", r:[19,26]},
+        {g:"NO @ NYG", t:"dom 12:00p", ml:["-111","-105"], fav:"NO", pct:50.7, pick:"NYG", r:[34,27]},
+        {g:"CAR @ PHI", t:"dom 12:00p", ml:["-112","-104"], fav:"CAR", pct:50.9, pick:"CAR", r:[25,14]},
         {g:"PIT @ TB", t:"dom 12:00p", ml:["-141","+120"], fav:"PIT", pct:56.3, pick:"PIT"},
         {g:"ARI @ LAR", t:"dom 3:05p", ml:["+600","-833"], fav:"LAR", pct:86.2, pick:"LAR"},
         {g:"LAC @ KC", t:"dom 3:25p", ml:["+355","-435"], fav:"KC", pct:78.7, pick:"KC"},
