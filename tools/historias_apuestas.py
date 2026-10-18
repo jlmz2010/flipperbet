@@ -88,7 +88,19 @@ def bet_card(y, label, title, odds, when, tsize=54):
         f'<text x="970" y="{y+215}" text-anchor="end" {WORD} font-size="124" fill="{GOLD}">{odds}</text>'
     )
 
+SEMANAS = {
+    5: dict(jueves="Jueves: 2 de 2 ganadas",
+            b3=("APUESTA 3 · DOM 8:30A", "Jalen Hurts anota TD", "+195", "Eagles @ Jaguars (Londres)", 54),
+            b4=("APUESTA 4 · DOM 12:00P", "Raiders y Jets, más de 20.5", "+259", "Parlay de 2 totales de equipo", 42),
+            extra="+ 3 underdogs y los picks de los 15 juegos"),
+    6: dict(jueves="Jueves: ganó el combo de Denver",
+            b3=("APUESTA 3 · DOM 3:05P", "Puka Nacua y Jeanty anotan TD", "+177", "Un TD de cada uno · Rams y Raiders", 42),
+            b4=("APUESTA 4 · DOM 12:00P", "Titans y Eagles, 2+ TDs", "+132", "Cada equipo anota 2 touchdowns o más", 46),
+            extra="+ Giants, Chiefs y 49ers y los picks de 14 juegos"),
+}
+
 def story(ig):
+    W = SEMANAS[SEMANA]
     link_block = (
         f'<text x="540" y="1640" text-anchor="middle" font-family="Libre Franklin" font-weight="700" font-size="46" fill="{WHITE}">Toca el link</text>'
         f'<path d="M540,1665 L540,1735 M507,1705 L540,1738 L573,1705" fill="none" stroke="{GOLD}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>'
@@ -107,10 +119,10 @@ def story(ig):
         # resultado del jueves
         f'<rect x="70" y="760" width="940" height="96" rx="48" fill="#0f2e1d" stroke="{GREEN}" stroke-width="3"/>'
         f'<circle cx="138" cy="808" r="26" fill="{GREEN}"/><path d="M125,808 L135,819 L153,796" fill="none" stroke="#04210f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>'
-        f'<text x="190" y="823" font-family="Libre Franklin" font-weight="800" font-size="42" fill="{WHITE}">Jueves: 2 de 2 ganadas</text>'
-        + bet_card(895, "APUESTA 3 · DOM 8:30A", "Jalen Hurts anota TD", "+195", "Eagles @ Jaguars (Londres)")
-        + bet_card(1175, "APUESTA 4 · DOM 12:00P", "Raiders y Jets, más de 20.5", "+259", "Parlay de 2 totales de equipo", tsize=42) +
-        f'<text x="540" y="1510" text-anchor="middle" font-family="Libre Franklin" font-weight="700" font-size="38" fill="{WHITE}">+ 3 underdogs y los picks de los 15 juegos</text>'
+        f'<text x="190" y="823" font-family="Libre Franklin" font-weight="800" font-size="42" fill="{WHITE}">{W["jueves"]}</text>'
+        + bet_card(895, *W["b3"][:4], tsize=W["b3"][4])
+        + bet_card(1175, *W["b4"][:4], tsize=W["b4"][4]) +
+        f'<text x="540" y="1510" text-anchor="middle" font-family="Libre Franklin" font-weight="700" font-size="38" fill="{WHITE}">{W["extra"]}</text>'
         + link_block +
         f'<text x="540" y="1830" text-anchor="middle" font-family="Libre Franklin" font-weight="400" font-size="28" fill="#7fa3b8">Solo mayores de 18 · Apuesta con responsabilidad</text>'
     )
