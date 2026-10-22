@@ -247,8 +247,39 @@ tr.against td{background:var(--gold-soft)}
    ml = [visita, local] · pick = mi pick · fav/pct = favorito de Vegas y % sin vig · r = [puntos visita, puntos local] cuando termina
    dogs = lista de underdogs (label, team, code, game, when, ml, pct, favTeam, favPct, text) */
 const DATA = {
-  current: 6,
+  current: 7,
   weeks: {
+    7: {
+      stamp: "Semana 7 · publicado jue 22 oct 2026",
+      lede: "Tres de mis picks van contra el favorito: Packers en Detroit, Chiefs en Seattle y Ravens en casa contra Cincinnati. Además vemos posibles sorpresas de Patriots el jueves y Falcons el domingo. La jugada del jueves: A.J. Brown anota touchdown. El fin de semana agregamos más.",
+      src: "Momios tomados de casas de apuestas (22 oct 2026). Análisis y opiniones: FlippBetBlog.",
+      bets: [
+        { kind:"Apuesta 1", title:"A.J. Brown anota TD", legs:["A.J. Brown (Patriots) anota touchdown en cualquier momento · NE @ CHI"], odds:"+135", prob:"Implícita: 42.6%", when:"jue 7:15p", why:"Con Romeo Doubs lesionado, a Brown le toca cargar con el juego de pases de New England. Viene de una semana floja, pero puede ser un partido de muchos puntos. $100 ganarían $135." }
+      ],
+      dogs: [
+        { label:"Sorpresa de la semana", team:"Packers", code:"GB", game:"GB @ DET", when:"dom 3:25p", ml:"+150", pct:38.6, favTeam:"DET", favPct:61.4, text:"Mi pick va con Green Bay. Su defensa ha sido de las mejores contra el pase largo en el último mes y les ganó los dos últimos partidos a los Lions." },
+        { label:"Sorpresa de la semana", team:"Chiefs", code:"KC", game:"KC @ SEA", when:"dom 7:20p", ml:"+125", pct:42.8, favTeam:"SEA", favPct:57.2, text:"Mi pick va con Kansas City. Mahomes juega muy bien y su línea casi no ha permitido capturas; Seattle depende de que Darnold no pierda balones." },
+        { label:"Sorpresa de la semana", team:"Ravens", code:"BAL", game:"CIN @ BAL", when:"dom 12:00p", ml:"-102", pct:48.6, favTeam:"CIN", favPct:51.4, text:"Mi pick va con Baltimore, en casa. Casi un volado: las casas pusieron de favorito a Cincinnati porque Lamar Jackson podría no jugar." },
+        { label:"Otra sorpresa", team:"Patriots", code:"NE", game:"NE @ CHI", when:"jue 7:15p", ml:"+135", pct:40.6, favTeam:"CHI", favPct:59.4, text:"No es mi pick (voy con Chicago), pero New England llega jugando muy bien con Drake Maye y puede dar la sorpresa." },
+        { label:"Otra sorpresa", team:"Falcons", code:"ATL", game:"SF @ ATL", when:"dom 12:00p", ml:"+130", pct:41.8, favTeam:"SF", favPct:58.2, text:"No es mi pick (voy con San Francisco), pero a los 49ers se les lesionaron casi todos sus receptores y juegan temprano lejos de casa." }
+      ],
+      games: [
+        {g:"NE @ CHI", t:"jue 7:15p", ml:["+138","-159"], fav:"CHI", pct:59.4, pick:"CHI"},
+        {g:"PIT @ NO", t:"dom 8:30a", ml:["-179","+153"], fav:"PIT", pct:61.9, pick:"PIT"},
+        {g:"SF @ ATL", t:"dom 12:00p", ml:["-154","+130"], fav:"SF", pct:58.2, pick:"SF"},
+        {g:"CIN @ BAL", t:"dom 12:00p", ml:["-115","-102"], fav:"CIN", pct:51.4, pick:"BAL"},
+        {g:"TB @ CAR", t:"dom 12:00p", ml:["+145","-172"], fav:"CAR", pct:60.8, pick:"CAR"},
+        {g:"NYG @ HOU", t:"dom 12:00p", ml:["+390","-500"], fav:"HOU", pct:80.3, pick:"HOU"},
+        {g:"IND @ MIN", t:"dom 12:00p", ml:["+235","-286"], fav:"MIN", pct:71.3, pick:"MIN"},
+        {g:"MIA @ NYJ", t:"dom 12:00p", ml:["+190","-227"], fav:"NYJ", pct:66.8, pick:"NYJ"},
+        {g:"CLE @ TEN", t:"dom 12:00p", ml:["-125","+107"], fav:"CLE", pct:53.5, pick:"CLE"},
+        {g:"DEN @ ARI", t:"dom 3:05p", ml:["-222","+185"], fav:"DEN", pct:66.3, pick:"DEN"},
+        {g:"GB @ DET", t:"dom 3:25p", ml:["+150","-175"], fav:"DET", pct:61.4, pick:"GB"},
+        {g:"LAR @ LV", t:"dom 3:25p", ml:["-213","+178"], fav:"LAR", pct:65.4, pick:"LAR"},
+        {g:"KC @ SEA", t:"dom 7:20p", ml:["+125","-147"], fav:"SEA", pct:57.2, pick:"KC"},
+        {g:"DAL @ PHI", t:"lun 7:15p", ml:["-217","+182"], fav:"DAL", pct:65.9, pick:"DAL"}
+      ]
+    },
     6: {
       stamp: "Semana 6 · resultados finales al lun 19 oct 2026",
       lede: "Semana cerrada: pegaron el combo del jueves en Denver, la de Titans y Eagles y la combinada de Chiefs y 49ers, que San Francisco aseguró el lunes. Se cayeron las de Giants, Puka Nacua y Cowboys. Mis picks cerraron la semana con más aciertos que fallos.",
