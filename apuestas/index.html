@@ -250,23 +250,30 @@ const DATA = {
   current: 7,
   weeks: {
     7: {
-      stamp: "Semana 7 · actualizado jue 22 oct 2026",
-      lede: "Cuatro de mis picks van contra el favorito: Packers en Detroit, Chiefs en Seattle, Ravens en casa contra Cincinnati y Falcons en casa contra San Francisco. La jugada del jueves: A.J. Brown anota touchdown. El fin de semana agregamos más.",
-      src: "Momios tomados de casas de apuestas (22 oct 2026). Análisis y opiniones: FlippBetBlog.",
+      stamp: "Semana 7 · actualizado dom 25 oct 2026",
+      lede: "Tres de mis picks van contra el favorito: Packers en Detroit, Chiefs en Seattle y Falcons en casa contra San Francisco. El jueves ganó Chicago 30-24 y no pegó la jugada de A.J. Brown. Para el domingo sumamos nueve jugadas.",
+      src: "Momios tomados de casas de apuestas (22 y 25 oct 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"A.J. Brown anota TD", legs:["A.J. Brown (Patriots) anota touchdown en cualquier momento · NE @ CHI"], odds:"+135", prob:"Implícita: 42.6%", when:"jue 7:15p", why:"Con Romeo Doubs lesionado, a Brown le toca cargar con el juego de pases de New England. Viene de una semana floja, pero puede ser un partido de muchos puntos. $100 ganarían $135." }
+        { kind:"Apuesta 1", lost:true, title:"A.J. Brown anota TD", legs:["A.J. Brown (Patriots) anota touchdown en cualquier momento · NE @ CHI · perdió (no anotó; Bears 30, Patriots 24)"], odds:"+135", prob:"Implícita: 42.6%", when:"jue 7:15p", why:"Perdió: Brown atrapó 3 pases para 48 yardas y no anotó; los touchdowns de New England fueron de Stevenson, Raridon y Maye." }
+        ,{ kind:"Apuesta 2", title:"Falcons ganan", legs:["Los Falcons le ganan a los 49ers · SF @ ATL"], odds:"+127", prob:"Implícita: 44.1%", when:"dom 12:00p", why:"Es mi pick y mi sorpresa del domingo: a San Francisco se le lesionaron casi todos sus receptores y juega temprano lejos de casa. $100 ganarían $127." }
+        ,{ kind:"Apuesta 3", title:"Broncos ganan y Bo Nix lanza 2 TD o más", legs:["Los Broncos le ganan a los Cardinals · DEN @ ARI","Bo Nix lanza 2 o más touchdowns de pase · DEN @ ARI"], odds:"+138", prob:"Implícita: 42.0%", when:"dom 3:05p", why:"Mi pick va con Denver. Arizona sufre contra el pase largo y la jugada necesita que Nix lo aproveche. $100 ganarían $138." }
+        ,{ kind:"Apuesta 4", title:"Raiders +7.5 y Vikings ganan", legs:["Raiders +7.5 de hándicap (ganan o pierden por 7 o menos) · LAR @ LV","Los Vikings le ganan a los Colts · IND @ MIN"], odds:"-120", prob:"2 juegos · aprox.", when:"dom 12:00p / 3:25p", why:"Minnesota es mi pick y favorito claro; los 7.5 puntos de ventaja le dan a Las Vegas margen aunque pierda. Pago aproximado: $100 ganarían unos $83." }
+        ,{ kind:"Apuesta 5", title:"Bijan, Gibbs y Henry anotan TD", legs:["Bijan Robinson (Falcons) anota touchdown · SF @ ATL","Jahmyr Gibbs (Lions) anota touchdown · GB @ DET","Derrick Henry (Ravens) anota touchdown · CIN @ BAL"], odds:"+155", prob:"3 jugadores · aprox.", when:"dom 12:00p / 3:25p", why:"Tres corredores estrella; los tres tienen que anotar. $100 ganarían $155." }
+        ,{ kind:"Apuesta 6", title:"Kyren Williams y CJ Stroud", legs:["Kyren Williams (Rams) anota touchdown · LAR @ LV","C.J. Stroud (Texans) lanza 2 o más touchdowns · NYG @ HOU"], odds:"+163", prob:"2 jugadores · aprox.", when:"dom 12:00p / 3:25p", why:"Houston es mi pick y favorito claro contra Giants, y Los Ángeles también lo es en Las Vegas. $100 ganarían $163." }
+        ,{ kind:"Apuesta 7", title:"Jared Goff y Emmanuel Wilson", legs:["Jared Goff (Lions) lanza 2 o más touchdowns · GB @ DET","Emmanuel Wilson anota touchdown · KC @ SEA"], odds:"+213", prob:"2 jugadores · aprox.", when:"dom 3:25p / 7:20p", why:"Dos jugadores de partidos distintos; los dos tienen que cumplir. $100 ganarían $213." }
+        ,{ kind:"Apuesta 8", title:"Amon-Ra St. Brown anota TD", legs:["Amon-Ra St. Brown (Lions) anota touchdown en cualquier momento · GB @ DET"], odds:"-135", prob:"Implícita: 57.4%", when:"dom 3:25p", why:"Es el receptor favorito de Detroit y la jugada más probable de la lista. Pago: $100 ganarían unos $74." }
+        ,{ kind:"Apuesta 9", title:"49ers pocos puntos y Broncos muchos", legs:["49ers anotan menos de 27.5 puntos · SF @ ATL","Broncos anotan más de 23.5 puntos · DEN @ ARI"], odds:"+211", prob:"2 equipos · aprox.", when:"dom 12:00p / 3:05p", why:"Va con mi lectura de que San Francisco llega mermado y Denver ataca bien. $100 ganarían $211." }
       ],
       dogs: [
         { label:"Sorpresa de la semana", team:"Packers", code:"GB", game:"GB @ DET", when:"dom 3:25p", ml:"+150", pct:38.6, favTeam:"DET", favPct:61.4, text:"Mi pick va con Green Bay. Su defensa ha sido de las mejores contra el pase largo en el último mes y les ganó los dos últimos partidos a los Lions." },
         { label:"Sorpresa de la semana", team:"Chiefs", code:"KC", game:"KC @ SEA", when:"dom 7:20p", ml:"+125", pct:42.8, favTeam:"SEA", favPct:57.2, text:"Mi pick va con Kansas City. Mahomes juega muy bien y su línea casi no ha permitido capturas; Seattle depende de que Darnold no pierda balones." },
-        { label:"Sorpresa de la semana", team:"Ravens", code:"BAL", game:"CIN @ BAL", when:"dom 12:00p", ml:"-102", pct:48.6, favTeam:"CIN", favPct:51.4, text:"Mi pick va con Baltimore, en casa. Casi un volado: las casas pusieron de favorito a Cincinnati porque Lamar Jackson podría no jugar." },
         { label:"Sorpresa de la semana", team:"Falcons", code:"ATL", game:"SF @ ATL", when:"dom 12:00p", ml:"+130", pct:41.8, favTeam:"SF", favPct:58.2, text:"Mi pick va con Atlanta. A los 49ers se les lesionaron casi todos sus receptores y juegan temprano lejos de casa." }
       ],
       games: [
-        {g:"NE @ CHI", t:"jue 7:15p", ml:["+138","-159"], fav:"CHI", pct:59.4, pick:"CHI"},
+        {g:"NE @ CHI", t:"jue 7:15p", ml:["+138","-159"], fav:"CHI", pct:59.4, pick:"CHI", r:[24,30]},
         {g:"PIT @ NO", t:"dom 8:30a", ml:["-179","+153"], fav:"PIT", pct:61.9, pick:"PIT"},
         {g:"SF @ ATL", t:"dom 12:00p", ml:["-154","+130"], fav:"SF", pct:58.2, pick:"ATL"},
-        {g:"CIN @ BAL", t:"dom 12:00p", ml:["-115","-102"], fav:"CIN", pct:51.4, pick:"BAL"},
+        {g:"CIN @ BAL", t:"dom 12:00p", ml:["-115","-102"], fav:"CIN", pct:51.4, pick:"CIN"},
         {g:"TB @ CAR", t:"dom 12:00p", ml:["+145","-172"], fav:"CAR", pct:60.8, pick:"CAR"},
         {g:"NYG @ HOU", t:"dom 12:00p", ml:["+390","-500"], fav:"HOU", pct:80.3, pick:"HOU"},
         {g:"IND @ MIN", t:"dom 12:00p", ml:["+235","-286"], fav:"MIN", pct:71.3, pick:"MIN"},
