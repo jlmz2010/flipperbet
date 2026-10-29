@@ -247,8 +247,36 @@ tr.against td{background:var(--gold-soft)}
    ml = [visita, local] · pick = mi pick · fav/pct = favorito de Vegas y % sin vig · r = [puntos visita, puntos local] cuando termina
    dogs = lista de underdogs (label, team, code, game, when, ml, pct, favTeam, favPct, text) */
 const DATA = {
-  current: 7,
+  current: 8,
   weeks: {
+    8: {
+      stamp: "Semana 8 · publicado jue 29 oct 2026",
+      lede: "Esta semana mis 14 picks van con el favorito. La posible sorpresa es Panthers el jueves en Green Bay. La jugada del jueves: Jalen Coker anota touchdown. El fin de semana agregamos más.",
+      src: "Momios tomados de casas de apuestas (29 oct 2026). Análisis y opiniones: FlippBetBlog.",
+      bets: [
+        { kind:"Apuesta 1", title:"Jalen Coker anota TD", legs:["Jalen Coker (Panthers) anota touchdown en cualquier momento · CAR @ GB"], odds:"+195", prob:"Implícita: 33.9%", when:"jue 7:15p", why:"Coker es receptor de Carolina y la casa paga bien si anota en cualquier momento del partido. $100 ganarían $195." }
+        ,{ kind:"Apuesta 2", title:"Josh Jacobs anota TD", legs:["Josh Jacobs (Packers) anota touchdown · CAR @ GB"], odds:"Sin dato", prob:"Sin dato", when:"jue 7:15p", why:"Jacobs es el corredor de Green Bay, que es mi pick del jueves. Aún no tengo el momio exacto." }
+      ],
+      dogs: [
+        { label:"Otra sorpresa", team:"Panthers", code:"CAR", game:"CAR @ GB", when:"jue 7:15p", ml:"+175", pct:35.6, favTeam:"GB", favPct:64.4, text:"No es mi pick (voy con Green Bay), pero las casas le dan 3.5 puntos de ventaja a Carolina: puede perder por poco y aun así dar pelea." }
+      ],
+      games: [
+        {g:"CAR @ GB", t:"jue 7:15p", ml:["+175","-192"], fav:"GB", pct:64.4, pick:"GB"},
+        {g:"BAL @ BUF", t:"dom 1:00p", ml:["+148","-172"], fav:"BUF", pct:61.1, pick:"BUF"},
+        {g:"TEN @ CIN", t:"dom 1:00p", ml:["+490","-667"], fav:"CIN", pct:83.7, pick:"CIN"},
+        {g:"ARI @ DAL", t:"dom 1:00p", ml:["+270","-323"], fav:"DAL", pct:73.9, pick:"DAL"},
+        {g:"MIN @ DET", t:"dom 1:00p", ml:["+150","-175"], fav:"DET", pct:61.4, pick:"DET"},
+        {g:"IND @ JAX", t:"dom 1:00p", ml:["+380","-500"], fav:"JAX", pct:80.0, pick:"JAX"},
+        {g:"LV @ NYJ", t:"dom 1:00p", ml:["+105","-123"], fav:"NYJ", pct:53.1, pick:"NYJ"},
+        {g:"CLE @ PIT", t:"dom 1:00p", ml:["+164","-192"], fav:"PIT", pct:63.4, pick:"PIT"},
+        {g:"ATL @ TB", t:"dom 1:00p", ml:["+121","-141"], fav:"TB", pct:56.4, pick:"TB"},
+        {g:"LAC @ LAR", t:"dom 4:05p", ml:["+240","-286"], fav:"LAR", pct:71.6, pick:"LAR"},
+        {g:"KC @ DEN", t:"dom 4:25p", ml:["-119","+101"], fav:"KC", pct:52.2, pick:"KC"},
+        {g:"NE @ MIA", t:"dom 4:25p", ml:["-323","+270"], fav:"NE", pct:73.9, pick:"NE"},
+        {g:"PHI @ WAS", t:"dom 8:20p", ml:["+205","-250"], fav:"WAS", pct:68.5, pick:"WAS"},
+        {g:"CHI @ SEA", t:"lun 8:15p", ml:["+148","-169"], fav:"SEA", pct:60.9, pick:"SEA"}
+      ]
+    },
     7: {
       stamp: "Semana 7 · resultados finales al lun 26 oct 2026",
       lede: "Semana cerrada: pegaron los Falcons, la de Kyren Williams con Stroud, la de Goff con Wilson y la de 49ers y Broncos en puntos. Se cayeron las otras cinco. De mis picks, 9 salieron bien y 5 fallaron.",
