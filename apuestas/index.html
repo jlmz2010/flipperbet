@@ -254,7 +254,7 @@ const DATA = {
       lede: "Los Jaguars ganaron 33-10 en Baltimore el jueves: pegó la Apuesta 2 y se cayó la 3. Quedan 14 partidos; abajo están mis jugadas, las sorpresas posibles y mis picks.",
       src: "Momios: promedio de dos casas de apuestas de México (8 nov 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"Seahawks ganan", legs:["Los Seahawks le ganan a los Cardinals · ARI @ SEA"], odds:"-418", prob:"Casas: 77.9%", when:"dom 4:25p", why:"Seattle juega en casa y las casas lo ponen muy por delante. Ojo: se reportó que Sam Darnold no jugará y Drew Lock trae molestia en el codo; hay que revisar el estatus del quarterback antes del domingo." }
+        { kind:"Apuesta 1", title:"Seahawks ganan", legs:["Los Seahawks le ganan a los Cardinals · ARI @ SEA"], odds:"-418", prob:"Casas: 77.9%", when:"dom 4:25p", why:"Seattle juega en casa y las casas lo ponen muy por delante. Ojo: se reportó que Sam Darnold no jugará; Drew Lock arrancaría y no aparece con lesión en el reporte. Hay que revisar la lista de inactivos antes del partido." }
         ,{ kind:"Apuesta 2", won:true, title:"Jaguars ganan y Chris Rodríguez anota TD", legs:["Los Jaguars le ganan a los Ravens · JAX @ BAL · ganó (Jaguars 33, Ravens 10)","Chris Rodríguez Jr. (Jaguars) anota touchdown en cualquier momento · JAX @ BAL · ganó (carrera de 2 yardas)"], odds:"+120", prob:"Implícita: 45.5%", when:"jue 8:15p", why:"Ganó: Jacksonville ganó 33-10 y Rodríguez anotó con una carrera de 2 yardas. $100 cobraron $120 de ganancia." }
         ,{ kind:"Apuesta 3", lost:true, title:"Lawrence 2 TD o más y Fagnano 1 TD o más", legs:["Trevor Lawrence (Jaguars) lanza 2 o más touchdowns de pase · JAX @ BAL · perdió (lanzó 1)","Joe Fagnano (Ravens) lanza 1 o más touchdowns de pase · JAX @ BAL · perdió (no lanzó ninguno)"], odds:"+200", prob:"Implícita: 33.3%", when:"jue 8:15p", why:"Perdió: Lawrence lanzó un touchdown de pase (necesitaba dos) y Fagnano no lanzó ninguno; Jacksonville anotó más por tierra." }
       ],
@@ -472,7 +472,7 @@ function resHtml(x,a,h){
   return `<span class="res">${esc(a)} ${x.r[0]}-${x.r[1]} ${esc(h)}</span> `+(hit?'<span class="won-badge">ACERTÉ</span>':'<span class="lost-badge">FALLÉ</span>');
 }
 function favWord(p){return p>=75?"Muy claro":p>=65?"Claro":p>=55?"Poco":"Casi parejo";}
-function record(w){let g=0,p=0,t=0;w.games.forEach(x=>{if(!x.r||!x.pick)return;const [a,h]=x.g.split(/ @ | vs /);if(x.r[0]===x.r[1]){t++;return;}(x.pick===(x.r[0]>x.r[1]?a:h))?g++:p++;});return g+p+t?`Mis picks: ${g} aciertos, ${p} fallos`+(t?`, ${t} empate`:""):"";}
+function record(w){let g=0,p=0,t=0;w.games.forEach(x=>{if(!x.r||!x.pick)return;const [a,h]=x.g.split(/ @ | vs /);if(x.r[0]===x.r[1]){t++;return;}(x.pick===(x.r[0]>x.r[1]?a:h))?g++:p++;});return g+p+t?`Mis picks: ${g} ${g===1?'acierto':'aciertos'}, ${p} ${p===1?'fallo':'fallos'}`+(t?`, ${t} empate`:""):"";}
 function show(k){
   const w=DATA.weeks[k]; nav(k);
   $("#stamp").textContent=w.stamp||""; $("#record").textContent=record(w); $("#lede").textContent=plain(w.lede||""); $("#src").textContent=w.src||"";
