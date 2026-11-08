@@ -250,34 +250,33 @@ const DATA = {
   current: 9,
   weeks: {
     9: {
-      stamp: "Semana 9 · momios al jue 5 nov 2026",
-      lede: "Arranca la semana 9 con Jaguars en Ravens el jueves. Estas son mis jugadas, las tres sorpresas posibles y mis picks de los 15 partidos.",
-      src: "Momios: promedio de dos casas de apuestas de México (5 nov 2026). Análisis y opiniones: FlippBetBlog.",
+      stamp: "Semana 9 · momios al dom 8 nov 2026 (jueves ya jugado)",
+      lede: "Los Jaguars ganaron 33-10 en Baltimore el jueves: pegó la Apuesta 2 y se cayó la 3. Quedan 14 partidos; abajo están mis jugadas, las sorpresas posibles y mis picks.",
+      src: "Momios: promedio de dos casas de apuestas de México (8 nov 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"Seahawks ganan", legs:["Los Seahawks le ganan a los Cardinals · ARI @ SEA"], odds:"-425", prob:"Casas: 78.2%", when:"dom 4:25p", why:"Seattle juega en casa y las casas lo ponen muy por delante. Ojo: hoy se reportó que Sam Darnold no jugará y Drew Lock trae molestia en el codo; hay que revisar el estatus del quarterback antes del domingo." }
-        ,{ kind:"Apuesta 2", title:"Jaguars ganan y Chris Rodríguez anota TD", legs:["Los Jaguars le ganan a los Ravens · JAX @ BAL","Chris Rodríguez Jr. (Jaguars) anota touchdown en cualquier momento · JAX @ BAL"], odds:"+120", prob:"Implícita: 45.5%", when:"jue 8:15p", why:"Jacksonville es el favorito claro del jueves y Baltimore llega sin su quarterback titular, Lamar Jackson, que está lesionado. $100 pagarían $120 de ganancia." }
-        ,{ kind:"Apuesta 3", title:"Lawrence 2 TD o más y Fagnano 1 TD o más", legs:["Trevor Lawrence (Jaguars) lanza 2 o más touchdowns de pase · JAX @ BAL","Joe Fagnano (Ravens) lanza 1 o más touchdowns de pase · JAX @ BAL"], odds:"+200", prob:"Implícita: 33.3%", when:"jue 8:15p", why:"Combinada de los dos quarterbacks del partido del jueves: tienen que pasar las dos cosas. $100 pagarían $200 de ganancia." }
+        { kind:"Apuesta 1", title:"Seahawks ganan", legs:["Los Seahawks le ganan a los Cardinals · ARI @ SEA"], odds:"-418", prob:"Casas: 77.9%", when:"dom 4:25p", why:"Seattle juega en casa y las casas lo ponen muy por delante. Ojo: se reportó que Sam Darnold no jugará y Drew Lock trae molestia en el codo; hay que revisar el estatus del quarterback antes del domingo." }
+        ,{ kind:"Apuesta 2", won:true, title:"Jaguars ganan y Chris Rodríguez anota TD", legs:["Los Jaguars le ganan a los Ravens · JAX @ BAL · ganó (Jaguars 33, Ravens 10)","Chris Rodríguez Jr. (Jaguars) anota touchdown en cualquier momento · JAX @ BAL · ganó (carrera de 2 yardas)"], odds:"+120", prob:"Implícita: 45.5%", when:"jue 8:15p", why:"Ganó: Jacksonville ganó 33-10 y Rodríguez anotó con una carrera de 2 yardas. $100 cobraron $120 de ganancia." }
+        ,{ kind:"Apuesta 3", lost:true, title:"Lawrence 2 TD o más y Fagnano 1 TD o más", legs:["Trevor Lawrence (Jaguars) lanza 2 o más touchdowns de pase · JAX @ BAL · perdió (lanzó 1)","Joe Fagnano (Ravens) lanza 1 o más touchdowns de pase · JAX @ BAL · perdió (no lanzó ninguno)"], odds:"+200", prob:"Implícita: 33.3%", when:"jue 8:15p", why:"Perdió: Lawrence lanzó un touchdown de pase (necesitaba dos) y Fagnano no lanzó ninguno; Jacksonville anotó más por tierra." }
       ],
       dogs: [
-        { label:"Sorpresa de la semana", team:"Panthers", code:"CAR", game:"DEN @ CAR", when:"dom 1:00p", ml:"+129", pct:42.3, favTeam:"DEN", favPct:57.7, text:"Denver es favorito por poco y Carolina juega en casa. Ojo: Carolina podría tener bajas en la línea ofensiva. Mi pick va con Carolina." }
-        ,{ label:"Sorpresa", team:"Falcons", code:"ATL", game:"CIN @ ATL", when:"dom 9:30a", ml:"+144", pct:39.7, favTeam:"CIN", favPct:60.3, text:"Cincinnati es favorito por poco; el partido es en Madrid (cancha neutral). Mi pick va con Atlanta." }
-        ,{ label:"Sorpresa", team:"Browns", code:"CLE", game:"CLE @ NO", when:"dom 1:00p", ml:"+140", pct:40.3, favTeam:"NO", favPct:59.7, text:"Nueva Orleans es favorito por poco y juega en casa. Ojo: Deshaun Watson está en duda por conmoción. Mi pick va con Cleveland." }
+        { label:"Sorpresa de la semana", team:"Panthers", code:"CAR", game:"DEN @ CAR", when:"dom 1:00p", ml:"+124", pct:43.2, favTeam:"DEN", favPct:56.8, text:"Denver es favorito por poco y Carolina juega en casa. Ojo: Carolina podría tener bajas en la línea ofensiva. Mi pick va con Carolina." }
+        ,{ label:"Sorpresa", team:"Falcons", code:"ATL", game:"CIN @ ATL", when:"dom 9:30a", ml:"+154", pct:38.0, favTeam:"CIN", favPct:62.0, text:"Cincinnati es favorito por poco; el partido es en Madrid (cancha neutral). Mi pick va con Atlanta." }
       ],
       games: [
-        {g:"JAX @ BAL", t:"jue 8:15p", ml:["-491","+395"], fav:"JAX", pct:80.4, pick:"JAX"},
-        {g:"CIN @ ATL", t:"dom 9:30a", ml:["-165","+144"], fav:"CIN", pct:60.3, pick:"ATL"},
-        {g:"DEN @ CAR", t:"dom 1:00p", ml:["-148","+129"], fav:"DEN", pct:57.7, pick:"CAR"},
-        {g:"DAL @ IND", t:"dom 1:00p", ml:["-232","+197"], fav:"DAL", pct:67.5, pick:"DAL"},
-        {g:"NYJ @ KC", t:"dom 1:00p", ml:["+424","-533"], fav:"KC", pct:81.5, pick:"KC"},
-        {g:"DET @ MIA", t:"dom 1:00p", ml:["-337","+278"], fav:"DET", pct:74.5, pick:"DET"},
-        {g:"CLE @ NO", t:"dom 1:00p", ml:["+140","-162"], fav:"NO", pct:59.7, pick:"CLE"},
-        {g:"NYG @ PHI", t:"dom 1:00p", ml:["-165","+144"], fav:"NYG", pct:60.3, pick:"NYG"},
-        {g:"LAR @ WSH", t:"dom 1:00p", ml:["-222","+190"], fav:"LAR", pct:66.7, pick:"LAR"},
-        {g:"HOU @ LAC", t:"dom 4:05p", ml:["-222","+190"], fav:"HOU", pct:66.7, pick:"HOU"},
-        {g:"LV @ SF", t:"dom 4:25p", ml:["+386","-489"], fav:"SF", pct:80.1, pick:"SF"},
-        {g:"GB @ NE", t:"dom 4:25p", ml:["+144","-165"], fav:"NE", pct:60.3, pick:"NE"},
-        {g:"ARI @ SEA", t:"dom 4:25p", ml:["+344","-425"], fav:"SEA", pct:78.2, pick:"SEA"},
-        {g:"TB @ CHI", t:"dom 8:20p", ml:["+245","-291"], fav:"CHI", pct:72.0, pick:"CHI"},
+        {g:"JAX @ BAL", t:"jue 8:15p", ml:["-491","+395"], fav:"JAX", pct:80.4, pick:"JAX", r:[33,10]},
+        {g:"CIN @ ATL", t:"dom 9:30a", ml:["-179","+154"], fav:"CIN", pct:62.0, pick:"ATL"},
+        {g:"DEN @ CAR", t:"dom 1:00p", ml:["-142","+124"], fav:"DEN", pct:56.8, pick:"CAR"},
+        {g:"DAL @ IND", t:"dom 1:00p", ml:["-225","+195"], fav:"DAL", pct:67.1, pick:"DAL"},
+        {g:"NYJ @ KC", t:"dom 1:00p", ml:["+411","-514"], fav:"KC", pct:81.1, pick:"KC"},
+        {g:"DET @ MIA", t:"dom 1:00p", ml:["-305","+259"], fav:"DET", pct:73.0, pick:"DET"},
+        {g:"CLE @ NO", t:"dom 1:00p", ml:["+150","-174"], fav:"NO", pct:61.4, pick:"NO"},
+        {g:"NYG @ PHI", t:"dom 1:00p", ml:["-162","+139"], fav:"NYG", pct:59.6, pick:"NYG"},
+        {g:"LAR @ WSH", t:"dom 1:00p", ml:["-236","+200"], fav:"LAR", pct:67.8, pick:"LAR"},
+        {g:"HOU @ LAC", t:"dom 4:05p", ml:["-246","+209"], fav:"HOU", pct:68.7, pick:"HOU"},
+        {g:"LV @ SF", t:"dom 4:25p", ml:["+371","-450"], fav:"SF", pct:79.4, pick:"SF"},
+        {g:"GB @ NE", t:"dom 4:25p", ml:["+147","-171"], fav:"NE", pct:60.9, pick:"NE"},
+        {g:"ARI @ SEA", t:"dom 4:25p", ml:["+338","-418"], fav:"SEA", pct:77.9, pick:"SEA"},
+        {g:"TB @ CHI", t:"dom 8:20p", ml:["+221","-262"], fav:"CHI", pct:69.9, pick:"CHI"},
         {g:"BUF @ MIN", t:"lun 8:15p", ml:["-167","+145"], fav:"BUF", pct:60.5, pick:"BUF"}
       ]
     },
