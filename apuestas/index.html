@@ -247,8 +247,37 @@ tr.against td{background:var(--gold-soft)}
    ml = [visita, local] · pick = mi pick · fav/pct = favorito de Vegas y % sin vig · r = [puntos visita, puntos local] cuando termina
    dogs = lista de underdogs (label, team, code, game, when, ml, pct, favTeam, favPct, text) */
 const DATA = {
-  current: 9,
+  current: 10,
   weeks: {
+    10: {
+      stamp: "Semana 10 · picks al dom 15 nov 2026 (el jueves ya se jugó)",
+      lede: "Esta semana voy con la sorpresa de los Patriots y con el favorito en los otros 13 partidos. El jueves Washington le ganó 24-21 a los Giants, mi pick, y ese ya se cayó. Tres de las jugadas de la semana coinciden con mis picks.",
+      src: "Momios: promedio de dos fuentes de casas de apuestas de Las Vegas (15 nov 2026). Análisis y opiniones: FlippBetBlog.",
+      bets: [
+        { kind:"Apuesta 1", title:"49ers y Texans ganan", legs:["Los 49ers le ganan a los Cowboys · SF @ DAL","Los Texans le ganan a los Browns · HOU @ CLE"], odds:"+109", prob:"2 juegos · aprox.", when:"dom 1:00p / 4:25p", why:"Los dos equipos son favoritos y van con mis picks, pero tienen que ganar los dos: si uno falla, se cae la jugada. $100 pagarían unos $109 de ganancia." }
+        ,{ kind:"Apuesta 2", title:"Bengals ganan y Rams ganan por 7 o más", legs:["Los Bengals le ganan a los Steelers · PIT @ CIN","Los Rams le ganan a los Cardinals por 7 puntos o más (−6.5) · LAR @ ARI"], odds:"Sin dato", prob:"Sin dato", when:"dom 4:05p / 8:20p", why:"Las dos cosas van con mis picks (Cincinnati y Los Ángeles) y tienen que pasar las dos. Los Rams no solo tienen que ganar, sino por 7 puntos o más. No tengo el momio exacto." }
+        ,{ kind:"Apuesta 3", title:"Chase Brown anota TD y Purdy más de 1.5 TD", legs:["Chase Brown (Bengals) anota touchdown en cualquier momento · PIT @ CIN","Brock Purdy (49ers) más de 1.5 touchdowns (2 o más) · SF @ DAL"], odds:"Sin dato", prob:"Sin dato", when:"dom 4:25p / 8:20p", why:"Los dos juegan con equipos de mis picks (Cincinnati y San Francisco) y tienen que cumplir los dos. No tengo el momio exacto." }
+      ],
+      dogs: [
+        { label:"Sorpresa de la semana", team:"Patriots", code:"NE", game:"NE @ DET", when:"dom 9:30a", ml:"+128", pct:42.5, favTeam:"DET", favPct:57.5, text:"Se juega en Múnich (cancha neutral). Detroit es favorito por poco y New England llega con bajas en la línea ofensiva y en los corredores. Mi pick va con los Patriots." }
+      ],
+      games: [
+        {g:"WSH @ NYG", t:"jue 8:15p", ml:["+108","-123"], fav:"NYG", pct:53.4, pick:"NYG",r:[24,21]},
+        {g:"NE @ DET", t:"dom 9:30a", ml:["+128","-146"], fav:"DET", pct:57.5, pick:"NE"},
+        {g:"BUF @ NYJ", t:"dom 1:00p", ml:["-440","+340"], fav:"BUF", pct:78.2, pick:"BUF"},
+        {g:"CAR @ NO", t:"dom 1:00p", ml:["+113","-125"], fav:"NO", pct:54.2, pick:"NO"},
+        {g:"MIA @ IND", t:"dom 1:00p", ml:["+181","-218"], fav:"IND", pct:65.8, pick:"IND"},
+        {g:"JAX @ TEN", t:"dom 1:00p", ml:["-663","+495"], fav:"JAX", pct:83.8, pick:"JAX"},
+        {g:"MIN @ GB", t:"dom 1:00p", ml:["+125","-148"], fav:"GB", pct:57.3, pick:"GB"},
+        {g:"HOU @ CLE", t:"dom 1:00p", ml:["-233","+193"], fav:"HOU", pct:67.2, pick:"HOU"},
+        {g:"KC @ ATL", t:"dom 1:00p", ml:["-175","+148"], fav:"KC", pct:61.2, pick:"KC"},
+        {g:"LAR @ ARI", t:"dom 4:05p", ml:["-510","+390"], fav:"LAR", pct:80.4, pick:"LAR"},
+        {g:"SEA @ LV", t:"dom 4:05p", ml:["-296","+243"], fav:"SEA", pct:71.9, pick:"SEA"},
+        {g:"SF @ DAL", t:"dom 4:25p", ml:["-216","+180"], fav:"SF", pct:65.7, pick:"SF"},
+        {g:"PIT @ CIN", t:"dom 8:20p", ml:["+158","-189"], fav:"CIN", pct:62.8, pick:"CIN"},
+        {g:"LAC @ BAL", t:"lun 8:15p", ml:["+183","-218"], fav:"BAL", pct:66.0, pick:"BAL"}
+      ]
+    },
     9: {
       stamp: "Semana 9 · resultados finales al lun 9 nov 2026",
       lede: "Semana cerrada: pegaron cinco de las ocho jugadas: Seahawks, Jaguars con Rodríguez, Bijan con Walker, la de 49ers con Williams y Gibbs, y la de Saints, Chiefs y Seahawks. Se cayeron la de Lawrence y Fagnano, la de Falcons y la de Kittle con Stevenson. Las dos sorpresas, Panthers y Falcons, no se dieron. De mis picks, 12 salieron bien y 3 fallaron.",
