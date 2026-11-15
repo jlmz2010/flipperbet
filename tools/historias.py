@@ -85,7 +85,7 @@ def story(ig):
         two_tone(540, 590, 120, "Flipper", "Bet", GOLD, WHITE) +
         f'<text x="540" y="650" text-anchor="middle" font-family="Libre Franklin" font-weight="600" font-size="32" letter-spacing="8" fill="{SKY}">NFL EN ESPAÑOL</text>' +
         two_tone(540, 930, 250, "SEMANA ", str(SEMANA), WHITE, GOLD, ls=0) +
-        f'<text x="540" y="1060" text-anchor="middle" font-family="Libre Franklin" font-weight="700" font-size="54" fill="{WHITE}">Underdog del jueves</text>'
+        f'<text x="540" y="1060" text-anchor="middle" font-family="Libre Franklin" font-weight="700" font-size="54" fill="{WHITE}">La sorpresa de la semana</text>'
         f'<text x="540" y="1130" text-anchor="middle" font-family="Libre Franklin" font-weight="400" font-size="44" fill="#d9e8f0">+ claves de los {PARTIDOS} partidos</text>'
         f'<text x="540" y="1270" text-anchor="middle" font-family="Libre Franklin" font-weight="400" font-size="38" fill="#a9c9da">Líneas explicadas en corto.</text>'
         + link_block +
