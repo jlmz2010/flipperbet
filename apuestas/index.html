@@ -247,8 +247,37 @@ tr.against td{background:var(--gold-soft)}
    ml = [visita, local] · pick = mi pick · fav/pct = favorito de Vegas y % sin vig · r = [puntos visita, puntos local] cuando termina
    dogs = lista de underdogs (label, team, code, game, when, ml, pct, favTeam, favPct, text) */
 const DATA = {
-  current: 10,
+  current: 11,
   weeks: {
+    11: {
+      stamp: "Semana 11 · picks al jue 19 nov 2026",
+      lede: "Esta semana voy con tres sorpresas (Eagles, Ravens y Vikings) y con el favorito en los otros 10 partidos. Las dos jugadas son del partido del jueves y coinciden con mi pick: Houston.",
+      src: "Momios: promedio de dos fuentes de casas de apuestas de Las Vegas (19 nov 2026). Análisis y opiniones: FlippBetBlog.",
+      bets: [
+        { kind:"Apuesta 1", title:"Texans ganan y David Montgomery anota touchdown", legs:["Los Texans le ganan a los Colts · IND @ HOU","David Montgomery (Texans) anota touchdown en cualquier momento · IND @ HOU"], odds:"-109", prob:"Combo de un partido · 2 cosas", when:"jue 8:15p", why:"Las dos cosas van con mi pick (Houston) y tienen que pasar las dos. Montgomery regresa de una lesión y no jugaba desde la semana 5; el otro corredor, Woody Marks, no juega. $100 pagarían unos $92 de ganancia." }
+        ,{ kind:"Apuesta 2", title:"Texans ganan, anotan 28 o más y Stroud lanza 2 pases de TD", legs:["Los Texans le ganan a los Colts · IND @ HOU","Los Texans anotan más de 27.5 puntos (28 o más) · IND @ HOU","C.J. Stroud (Texans) lanza 2 o más pases de touchdown · IND @ HOU"], odds:"+100", prob:"Combo de un partido · 3 cosas", when:"jue 8:15p", why:"Va con mi pick (Houston), pero pide más: tienen que pasar las tres cosas y, si una falla, se cae la jugada. $100 pagarían $100 de ganancia." }
+      ],
+      dogs: [
+        { label:"Sorpresa de la semana", team:"Ravens", code:"BAL", game:"BAL @ CAR", when:"dom 1:00p", ml:"+120", pct:43.8, favTeam:"CAR", favPct:56.2, text:"Carolina es favorito por poco. Es el partido más parejo de la semana, aunque Baltimore sigue sin Lamar Jackson. Mi pick va con Baltimore." },
+        { label:"Mi sorpresa", team:"Vikings", code:"MIN", game:"MIN @ SF", when:"dom 8:20p", ml:"+140", pct:40.2, favTeam:"SF", favPct:59.8, text:"San Francisco es favorito por poco y se juega en cancha neutral, en la Ciudad de México. Minnesota llega con Kirk Cousins y sin Jordan Addison. Mi pick va con Minnesota." },
+        { label:"Mi sorpresa", team:"Eagles", code:"PHI", game:"PIT @ PHI", when:"dom 1:00p", ml:"+182", pct:34.1, favTeam:"PIT", favPct:65.9, text:"Pittsburgh es favorito claro de visitante. Filadelfia juega en casa con Joe Milton de quarterback, en un partido donde se esperan pocos puntos. Es la sorpresa más difícil de las tres. Mi pick va con Filadelfia." }
+      ],
+      games: [
+        {g:"IND @ HOU", t:"jue 8:15p", ml:["+532","-684"], fav:"HOU", pct:84.6, pick:"HOU"},
+        {g:"MIA @ BUF", t:"dom 1:00p", ml:["+850","-1314"], fav:"BUF", pct:89.8, pick:"BUF"},
+        {g:"NO @ CHI", t:"dom 1:00p", ml:["+482","-650"], fav:"CHI", pct:83.5, pick:"CHI"},
+        {g:"TEN @ DAL", t:"dom 1:00p", ml:["+328","-412"], fav:"DAL", pct:77.5, pick:"DAL"},
+        {g:"TB @ DET", t:"dom 1:00p", ml:["+245","-296"], fav:"DET", pct:72.1, pick:"DET"},
+        {g:"ARI @ KC", t:"dom 1:00p", ml:["+862","-1440"], fav:"KC", pct:90.0, pick:"KC"},
+        {g:"PIT @ PHI", t:"dom 1:00p", ml:["-218","+182"], fav:"PIT", pct:65.9, pick:"PHI"},
+        {g:"BAL @ CAR", t:"dom 1:00p", ml:["+120","-140"], fav:"CAR", pct:56.2, pick:"BAL"},
+        {g:"NYJ @ LAC", t:"dom 4:05p", ml:["+145","-172"], fav:"LAC", pct:60.8, pick:"LAC"},
+        {g:"LV @ DEN", t:"dom 4:25p", ml:["+430","-553"], fav:"DEN", pct:81.8, pick:"DEN"},
+        {g:"JAX @ NYG", t:"dom 4:25p", ml:["-265","+218"], fav:"JAX", pct:69.8, pick:"JAX"},
+        {g:"MIN @ SF", t:"dom 8:20p", ml:["+140","-163"], fav:"SF", pct:59.8, pick:"MIN"},
+        {g:"CIN @ WSH", t:"lun 8:15p", ml:["-292","+238"], fav:"CIN", pct:71.6, pick:"CIN"}
+      ]
+    },
     10: {
       stamp: "Semana 10 · picks al dom 15 nov 2026 (el jueves ya se jugó)",
       lede: "Esta semana voy con la sorpresa de los Patriots y con el favorito en los otros 13 partidos. El jueves Washington le ganó 24-21 a los Giants, mi pick, y ese ya se cayó. Tres de las jugadas de la semana coinciden con mis picks.",
