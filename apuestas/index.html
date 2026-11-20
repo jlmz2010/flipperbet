@@ -186,7 +186,7 @@ tr.against td{background:var(--gold-soft)}
 <body>
 <header class="top">
   <a class="brand" href=".././" aria-label="FlippBetBlog inicio"><img src="../img/icono.svg" alt="" width="40" height="40"><span><b>Flipp</b><span>BetBlog</span></span></a>
-  <nav class="nav" aria-label="Secciones"><a href=".././">Blog</a><a href="../apuestas/" aria-current="page">Apuestas NFL</a><a href="https://claude.ai/artifact/K9kYEZdrSgLZnAtLsKs64c" class="admin" target="_blank" rel="noopener">Admin</a></nav>
+  <nav class="nav" aria-label="Secciones"><a href=".././">Blog</a><a href="../apuestas/" aria-current="page">Apuestas NFL</a></nav>
 </header>
 
 <main class="wrap" style="margin-top:24px">
@@ -250,12 +250,12 @@ const DATA = {
   current: 11,
   weeks: {
     11: {
-      stamp: "Semana 11 · picks al jue 19 nov 2026",
-      lede: "Esta semana voy con tres sorpresas (Eagles, Ravens y Vikings) y con el favorito en los otros 10 partidos. Las dos jugadas son del partido del jueves y coinciden con mi pick: Houston.",
+      stamp: "Semana 11 · resultados al jue 19 nov 2026 (faltan los juegos del domingo y lunes)",
+      lede: "El jueves Houston le ganó 26-3 a Indianápolis y acerté el pick, pero las dos jugadas se cayeron: Montgomery no anotó y Houston se quedó en 26 puntos. Para el domingo voy con tres sorpresas (Eagles, Ravens y Vikings) y con el favorito en los otros partidos.",
       src: "Momios: promedio de dos fuentes de casas de apuestas de Las Vegas (19 nov 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"Texans ganan y David Montgomery anota touchdown", legs:["Los Texans le ganan a los Colts · IND @ HOU","David Montgomery (Texans) anota touchdown en cualquier momento · IND @ HOU"], odds:"-109", prob:"Combo de un partido · 2 cosas", when:"jue 8:15p", why:"Las dos cosas van con mi pick (Houston) y tienen que pasar las dos. Montgomery regresa de una lesión y no jugaba desde la semana 5; el otro corredor, Woody Marks, no juega. $100 pagarían unos $92 de ganancia." }
-        ,{ kind:"Apuesta 2", title:"Texans ganan, anotan 28 o más y Stroud lanza 2 pases de TD", legs:["Los Texans le ganan a los Colts · IND @ HOU","Los Texans anotan más de 27.5 puntos (28 o más) · IND @ HOU","C.J. Stroud (Texans) lanza 2 o más pases de touchdown · IND @ HOU"], odds:"+100", prob:"Combo de un partido · 3 cosas", when:"jue 8:15p", why:"Va con mi pick (Houston), pero pide más: tienen que pasar las tres cosas y, si una falla, se cae la jugada. $100 pagarían $100 de ganancia." }
+        { kind:"Apuesta 1", lost:true, title:"Texans ganan y David Montgomery anota touchdown", legs:["Los Texans le ganan a los Colts · ganó (26-3)","David Montgomery (Texans) anota touchdown en cualquier momento · perdió (107 yardas, sin touchdown)"], odds:"-109", prob:"Combo de un partido · 2 cosas", when:"jue 8:15p", why:"Perdió: Houston ganó, pero Montgomery no anotó; los tres touchdowns fueron pases de Stroud a otros jugadores." }
+        ,{ kind:"Apuesta 2", lost:true, title:"Texans ganan, anotan 28 o más y Stroud lanza 2 pases de TD", legs:["Los Texans le ganan a los Colts · ganó (26-3)","Los Texans anotan más de 27.5 puntos (28 o más) · perdió (anotaron 26)","C.J. Stroud (Texans) lanza 2 o más pases de touchdown · ganó (3 pases de touchdown)"], odds:"+100", prob:"Combo de un partido · 3 cosas", when:"jue 8:15p", why:"Perdió: Houston ganó y Stroud lanzó tres pases de touchdown, pero el equipo se quedó en 26 puntos, a dos de lo que pedía la jugada." }
       ],
       dogs: [
         { label:"Sorpresa de la semana", team:"Ravens", code:"BAL", game:"BAL @ CAR", when:"dom 1:00p", ml:"+120", pct:43.8, favTeam:"CAR", favPct:56.2, text:"Carolina es favorito por poco. Es el partido más parejo de la semana, aunque Baltimore sigue sin Lamar Jackson. Mi pick va con Baltimore." },
@@ -263,7 +263,7 @@ const DATA = {
         { label:"Mi sorpresa", team:"Eagles", code:"PHI", game:"PIT @ PHI", when:"dom 1:00p", ml:"+182", pct:34.1, favTeam:"PIT", favPct:65.9, text:"Pittsburgh es favorito claro de visitante. Filadelfia juega en casa con Joe Milton de quarterback, en un partido donde se esperan pocos puntos. Es la sorpresa más difícil de las tres. Mi pick va con Filadelfia." }
       ],
       games: [
-        {g:"IND @ HOU", t:"jue 8:15p", ml:["+532","-684"], fav:"HOU", pct:84.6, pick:"HOU"},
+        {g:"IND @ HOU", t:"jue 8:15p", ml:["+532","-684"], fav:"HOU", pct:84.6, pick:"HOU", r:[3,26]},
         {g:"MIA @ BUF", t:"dom 1:00p", ml:["+850","-1314"], fav:"BUF", pct:89.8, pick:"BUF"},
         {g:"NO @ CHI", t:"dom 1:00p", ml:["+482","-650"], fav:"CHI", pct:83.5, pick:"CHI"},
         {g:"TEN @ DAL", t:"dom 1:00p", ml:["+328","-412"], fav:"DAL", pct:77.5, pick:"DAL"},
@@ -279,32 +279,32 @@ const DATA = {
       ]
     },
     10: {
-      stamp: "Semana 10 · picks al dom 15 nov 2026 (el jueves ya se jugó)",
-      lede: "Esta semana voy con la sorpresa de los Patriots y con el favorito en los otros 13 partidos. El jueves Washington le ganó 24-21 a los Giants, mi pick, y ese ya se cayó. Tres de las jugadas de la semana coinciden con mis picks.",
+      stamp: "Semana 10 · resultados finales al lun 16 nov 2026",
+      lede: "Semana cerrada: pegaron dos de las tres jugadas, la de Bengals con Rams y la de Chase Brown con Purdy. Se cayó la de 49ers y Texans porque Houston perdió en Cleveland. La sorpresa de los Patriots no se dio. De mis 14 picks acerté 8.",
       src: "Momios: promedio de dos fuentes de casas de apuestas de Las Vegas (15 nov 2026). Análisis y opiniones: FlippBetBlog.",
       bets: [
-        { kind:"Apuesta 1", title:"49ers y Texans ganan", legs:["Los 49ers le ganan a los Cowboys · SF @ DAL","Los Texans le ganan a los Browns · HOU @ CLE"], odds:"+109", prob:"2 juegos · aprox.", when:"dom 1:00p / 4:25p", why:"Los dos equipos son favoritos y van con mis picks, pero tienen que ganar los dos: si uno falla, se cae la jugada. $100 pagarían unos $109 de ganancia." }
-        ,{ kind:"Apuesta 2", title:"Bengals ganan y Rams ganan por 7 o más", legs:["Los Bengals le ganan a los Steelers · PIT @ CIN","Los Rams le ganan a los Cardinals por 7 puntos o más (−6.5) · LAR @ ARI"], odds:"Sin dato", prob:"Sin dato", when:"dom 4:05p / 8:20p", why:"Las dos cosas van con mis picks (Cincinnati y Los Ángeles) y tienen que pasar las dos. Los Rams no solo tienen que ganar, sino por 7 puntos o más. No tengo el momio exacto." }
-        ,{ kind:"Apuesta 3", title:"Chase Brown anota TD y Purdy más de 1.5 TD", legs:["Chase Brown (Bengals) anota touchdown en cualquier momento · PIT @ CIN","Brock Purdy (49ers) más de 1.5 touchdowns (2 o más) · SF @ DAL"], odds:"Sin dato", prob:"Sin dato", when:"dom 4:25p / 8:20p", why:"Los dos juegan con equipos de mis picks (Cincinnati y San Francisco) y tienen que cumplir los dos. No tengo el momio exacto." }
+        { kind:"Apuesta 1", lost:true, title:"49ers y Texans ganan", legs:["Los 49ers le ganan a los Cowboys · ganó (46-40)","Los Texans le ganan a los Browns · perdió (24-27)"], odds:"+109", prob:"2 juegos · aprox.", when:"dom 1:00p / 4:25p", why:"Perdió: San Francisco cumplió, pero Houston dejó ir una ventaja de 17-0 y perdió 27-24 en Cleveland." }
+        ,{ kind:"Apuesta 2", won:true, title:"Bengals ganan y Rams ganan por 7 o más", legs:["Los Bengals le ganan a los Steelers · ganó (38-18)","Los Rams le ganan a los Cardinals por 7 puntos o más (−6.5) · ganó (34-6)"], odds:"Sin dato", prob:"Sin dato", when:"dom 4:05p / 8:20p", why:"Ganó: Cincinnati le ganó 38-18 a Pittsburgh y los Rams ganaron por 28 en Arizona. No tengo el momio exacto." }
+        ,{ kind:"Apuesta 3", won:true, title:"Chase Brown anota TD y Purdy más de 1.5 TD", legs:["Chase Brown (Bengals) anota touchdown en cualquier momento · ganó (2 touchdowns por pase)","Brock Purdy (49ers) más de 1.5 touchdowns (2 o más) · ganó (3 pases de touchdown)"], odds:"Sin dato", prob:"Sin dato", when:"dom 4:25p / 8:20p", why:"Ganó: Chase Brown atrapó dos pases de touchdown y Purdy lanzó tres. No tengo el momio exacto." }
       ],
       dogs: [
-        { label:"Sorpresa de la semana", team:"Patriots", code:"NE", game:"NE @ DET", when:"dom 9:30a", ml:"+128", pct:42.5, favTeam:"DET", favPct:57.5, text:"Se juega en Múnich (cancha neutral). Detroit es favorito por poco y New England llega con bajas en la línea ofensiva y en los corredores. Mi pick va con los Patriots." }
+        { label:"Sorpresa de la semana", lost:true, team:"Patriots", code:"NE", game:"NE @ DET", when:"dom 9:30a", ml:"+128", pct:42.5, favTeam:"DET", favPct:57.5, text:"Perdió: Detroit 35, New England 10." }
       ],
       games: [
         {g:"WSH @ NYG", t:"jue 8:15p", ml:["+108","-123"], fav:"NYG", pct:53.4, pick:"NYG",r:[24,21]},
-        {g:"NE @ DET", t:"dom 9:30a", ml:["+128","-146"], fav:"DET", pct:57.5, pick:"NE"},
-        {g:"BUF @ NYJ", t:"dom 1:00p", ml:["-440","+340"], fav:"BUF", pct:78.2, pick:"BUF"},
-        {g:"CAR @ NO", t:"dom 1:00p", ml:["+113","-125"], fav:"NO", pct:54.2, pick:"NO"},
-        {g:"MIA @ IND", t:"dom 1:00p", ml:["+181","-218"], fav:"IND", pct:65.8, pick:"IND"},
-        {g:"JAX @ TEN", t:"dom 1:00p", ml:["-663","+495"], fav:"JAX", pct:83.8, pick:"JAX"},
-        {g:"MIN @ GB", t:"dom 1:00p", ml:["+125","-148"], fav:"GB", pct:57.3, pick:"GB"},
-        {g:"HOU @ CLE", t:"dom 1:00p", ml:["-233","+193"], fav:"HOU", pct:67.2, pick:"HOU"},
-        {g:"KC @ ATL", t:"dom 1:00p", ml:["-175","+148"], fav:"KC", pct:61.2, pick:"KC"},
-        {g:"LAR @ ARI", t:"dom 4:05p", ml:["-510","+390"], fav:"LAR", pct:80.4, pick:"LAR"},
-        {g:"SEA @ LV", t:"dom 4:05p", ml:["-296","+243"], fav:"SEA", pct:71.9, pick:"SEA"},
-        {g:"SF @ DAL", t:"dom 4:25p", ml:["-216","+180"], fav:"SF", pct:65.7, pick:"SF"},
-        {g:"PIT @ CIN", t:"dom 8:20p", ml:["+158","-189"], fav:"CIN", pct:62.8, pick:"CIN"},
-        {g:"LAC @ BAL", t:"lun 8:15p", ml:["+183","-218"], fav:"BAL", pct:66.0, pick:"BAL"}
+        {g:"NE @ DET", t:"dom 9:30a", ml:["+128","-146"], fav:"DET", pct:57.5, pick:"NE", r:[10,35]},
+        {g:"BUF @ NYJ", t:"dom 1:00p", ml:["-440","+340"], fav:"BUF", pct:78.2, pick:"BUF", r:[31,12]},
+        {g:"CAR @ NO", t:"dom 1:00p", ml:["+113","-125"], fav:"NO", pct:54.2, pick:"NO", r:[20,17]},
+        {g:"MIA @ IND", t:"dom 1:00p", ml:["+181","-218"], fav:"IND", pct:65.8, pick:"IND", r:[22,24]},
+        {g:"JAX @ TEN", t:"dom 1:00p", ml:["-663","+495"], fav:"JAX", pct:83.8, pick:"JAX", r:[40,23]},
+        {g:"MIN @ GB", t:"dom 1:00p", ml:["+125","-148"], fav:"GB", pct:57.3, pick:"GB", r:[30,10]},
+        {g:"HOU @ CLE", t:"dom 1:00p", ml:["-233","+193"], fav:"HOU", pct:67.2, pick:"HOU", r:[24,27]},
+        {g:"KC @ ATL", t:"dom 1:00p", ml:["-175","+148"], fav:"KC", pct:61.2, pick:"KC", r:[35,13]},
+        {g:"LAR @ ARI", t:"dom 4:05p", ml:["-510","+390"], fav:"LAR", pct:80.4, pick:"LAR", r:[34,6]},
+        {g:"SEA @ LV", t:"dom 4:05p", ml:["-296","+243"], fav:"SEA", pct:71.9, pick:"SEA", r:[21,13]},
+        {g:"SF @ DAL", t:"dom 4:25p", ml:["-216","+180"], fav:"SF", pct:65.7, pick:"SF", r:[46,40]},
+        {g:"PIT @ CIN", t:"dom 8:20p", ml:["+158","-189"], fav:"CIN", pct:62.8, pick:"CIN", r:[18,38]},
+        {g:"LAC @ BAL", t:"lun 8:15p", ml:["+183","-218"], fav:"BAL", pct:66.0, pick:"BAL", r:[23,20]}
       ]
     },
     9: {
